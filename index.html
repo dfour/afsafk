@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 100px;">
+        <div class="row justify-content-md-center">
+            <h3>Anime Fighters Simulator AFK Open Calculator</h3> &nbsp;&nbsp;&nbsp;&nbsp; by d_four
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- Left -->
+                <table class="table table-sm">
+                    <tr>
+                        <th>World</th>
+                        <th> Star Cost</th>
+                        <th>World</th>
+                        <th> Star Cost</th>
+                    </tr>
+                    <tr>
+                        <td>1 </td>
+                        <td> 80</td>
+                        <td>16 </td>
+                        <td> 80b</td>
+                    </tr>
+                    <tr>
+                        <td>2 </td>
+                        <td> 300</td>
+                        <td>17 </td>
+                        <td> 250b</td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td> 2.5k</td>
+                        <td>18 </td>
+                        <td> 780b</td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td> 10k</td>
+                        <td>19 </td>
+                        <td> 2t</td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td> 50k</td>
+                        <td>20 </td>
+                        <td> 7t</td>
+                    </tr>
+                    <tr>
+                        <td>6 </td>
+                        <td> 250k</td>
+                        <td>21 </td>
+                        <td> 20t</td>
+                    </tr>
+                    <tr>
+                        <td>7 </td>
+                        <td> 800k</td>
+                        <td>22 </td>
+                        <td> 65t</td>
+                    </tr>
+                    <tr>
+                        <td>8 </td>
+                        <td> 3m</td>
+                        <td>23 </td>
+                        <td> 200t</td>
+                    </tr>
+                    <tr>
+                        <td>9 </td>
+                        <td> 10m</td>
+                        <td>24 </td>
+                        <td> 650t</td>
+                    </tr>
+                    <tr>
+                        <td>10 </td>
+                        <td> 40m</td>
+                        <td>25 </td>
+                        <td> 2q</td>
+                    </tr>
+                    <tr>
+                        <td>11 </td>
+                        <td> 150m</td>
+                        <td>26 </td>
+                        <td> 6q</td>
+                    </tr>
+                    <tr>
+                        <td>12 </td>
+                        <td> 500m</td>
+                        <td>27 </td>
+                        <td> 20q</td>
+                    </tr>
+                    <tr>
+                        <td>13 </td>
+                        <td> 1.5b</td>
+                        <td>28 </td>
+                        <td> 66q</td>
+                    </tr>
+                    <tr>
+                        <td>14 </td>
+                        <td> 5b</td>
+                        <td>29 </td>
+                        <td> 220q</td>
+                    </tr>
+                    <tr>
+                        <td>15 </td>
+                        <td> 20b</td>
+                        <td>30 </td>
+                        <td>----</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-8">
+                <!-- Main Area -->
+                <div class="row">
+                    <!-- Top Bar -->
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white">Cost</span>
+                            </div>
+                            <input id="inpcost" type="text" aria-label="cost" class="form-control" placeholder="100">
+                            <input id="inpmod" type="text" aria-label="mod" class="form-control" placeholder="T">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white">Opens</span>
+                            </div>
+                            <select class="form-control" id="opensCount">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white">Inv Space</span>
+                            </div>
+                            <input type="text" class="form-control" id="invSpace" placeholder="1000">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- spacer --> &nbsp;
+                </div>
+                <div class="row">
+                    <!-- Mid Bar -->
+                    <div class="col-6">
+                        <!-- Result Area-->
+                        <h3 id="resdisplay">AFS</h3>
+                        <h3 id="res8display">CALC</h3>
+                    </div>
+                    <div class="col-6">
+                        <!-- toggle area -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text  bg-info text-white" for="inputGroupSelect01">Star
+                                    Use&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01">
+                                <option selected value="1">Fuse</option>
+                                <option value="2">Sell</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text  bg-info text-white"
+                                    for="inputGroupSelect02">GPass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect02">
+                                <option selected value="1">None</option>
+                                <option value="2">Owned</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text  bg-info text-white" for="inputGroupSelect03">50k
+                                    Badge</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect03">
+                                <option selected value="1">None</option>
+                                <option value="2">Owned</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text  bg-info text-white" for="inputGroupSelect04">Max
+                                    Open</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect04">
+                                <option selected value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Bot Bar -->
+                    <button id="getres" type="button" class="btn btn-primary btn-block">Get Result</button>
+                    Values shown are just estimates and do not account for variations due to connection speed or<br>
+                    computer performance.
+                </div>
+                <div class="row">
+                    <!-- Very Bot Bar -->
+                    <br>
+                    <span class="small">Version 1.0 - Updated 17.05.2022</span>
+                </div>
+            </div>
+            <div class="col-1">
+                <!-- Right -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**  TODO
+         *  DONE    Add sell maths
+         *  Add hour field
+         *  Add multi result field
+         *  Add max open token calc
+         *  Add time event mod
+         * */
+        // Control and calculate results here
+
+        // hard vars
+        defaultOpenPerHour = 1200   // how many opens an be done in an hour
+        defaultMaxOpensPerHour = 40 // how many max opens can be done in a hour
+        defaultSellRate = 0.25      // value returned for sell (avg)
+        modLetters = " KMTQEZYXWV"  // modifiers for currency
+
+        // useful functions
+
+        function getCostOfSingleOpen(cps, opens) {
+            return cps * opens;
+        }
+
+        function getCostOfSingleMaxOpen(cps, invSpace) {
+            return cps * invSpace * 0.5;
+        }
+
+        function getCostOfHourOpens(cps, opens, gpass, fiftyk, fuseSell) {
+            fc = cps * opens * defaultOpenPerHour * gpass * fiftyk
+            if (fuseSell == 2) {
+                fc = fc * (1 - defaultSellRate)
+            }
+            return fc
+        }
+
+        function getCostOfHourMaxOpen(cps, invSpace, fuseSell) {
+            fc = cps * defaultMaxOpensPerHour * invSpace
+            sellprice = 0
+            if (fuseSell == 2) {
+                sellprice = fc * defaultSellRate
+            }
+            return (fc * 0.5) - sellprice
+        }
+
+        function convertToFormatted(value, mod) {
+            cmodpos = modLetters.indexOf(mod.toUpperCase())
+            while (Math.ceil(Math.log10(value + 1)) > 3) {
+                cmodpos += 1 // move to next modifier
+                value = value * 0.001// divide val by 1000 to mve 3 places down
+            }
+
+            return value.toPrecision(3) + modLetters[cmodpos];
+        }
+
+
+
+        // respond to Buttons
+        $("#getres").click(function (e) {
+            cost = $("#inpcost").val()  // should account for VIP here
+            mod = $("#inpmod").val()
+            openCount = $("#opensCount").val()
+            invSpace = $("#invSpace").val()
+            fuseSell = $("#inputGroupSelect01").val()   // 1 = fuse | 2 = Sell
+            gPass = $("#inputGroupSelect02").val()      // 1 = None | 2 = Owned
+            fiftyk = $("#inputGroupSelect03").val()     // 1 = None | 2 = Owned
+            doMax = $("#inputGroupSelect04").val()      // 1 = Yes  | 2 = No
+
+            res = getCostOfHourOpens(cost, openCount, gPass, fiftyk, fuseSell)
+            if (doMax == 1) {
+                res += getCostOfHourMaxOpen(cost, invSpace, fuseSell)
+            }
+
+
+            hourOne = convertToFormatted(res, mod)
+            hourEight = convertToFormatted(res * 8, mod)
+
+
+            $("#resdisplay").html(hourOne + " for 1 hour")
+            $("#res8display").html(hourEight + " for 8 hours")
+        })
+
+    </script>
+</body>
+
+</html>
