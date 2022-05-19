@@ -7,7 +7,7 @@ This is the github repository the AFS AFK cost Calculator
 ----------
 
 Version Update:
-
+- 1.4 Time Badge and Styling
 - 1.3 Badge Selector (WIP) and Time event modifier
 - 1.1 Added World selector And Max Open Token count
 - 1.0 Initial release and testing
