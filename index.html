@@ -290,6 +290,7 @@
                         <h3 id="res6display"></h3>
                         <h3 id="res7display"></h3>
                         <h3 id="res8display">Then click get results &darr;</h3>
+                        <h3 id="res24display"></h3>
                     </div>
                     <div class="col-6">
                         <!-- toggle area -->
@@ -617,6 +618,7 @@
             hour6 = convertToFormatted(res * 6, mod)
             hour7 = convertToFormatted(res * 7, mod)
             hour8 = convertToFormatted(res * 8, mod)
+            hour24 = convertToFormatted(res * 24, mod)
 
             hourM1 = convertToFormatted(mres, mmod)
             hourM2 = convertToFormatted(mres * 2, mmod)
@@ -626,6 +628,7 @@
             hourM6 = convertToFormatted(mres * 6, mmod)
             hourM7 = convertToFormatted(mres * 7, mmod)
             hourM8 = convertToFormatted(mres * 8, mmod)
+            hourM24 = convertToFormatted(mres * 24, mod)
 
             $("#resdisplay").html(hour1 + " for 1 hour  (" + hourM1 + " tokens)")
             $("#res2display").html(hour2 + " for 2 hours (" + hourM2 + " tokens)")
@@ -635,6 +638,7 @@
             $("#res6display").html(hour6 + " for 6 hours (" + hourM6 + " tokens)")
             $("#res7display").html(hour7 + " for 7 hours (" + hourM7 + " tokens)")
             $("#res8display").html(hour8 + " for 8 hours (" + hourM8 + " tokens)")
+            $("#res24display").html(hour24 + " for 24 hours (" + hourM24 + " tokens)")
         });
 
         $(".trworld").click(function () {
