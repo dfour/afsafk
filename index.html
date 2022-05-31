@@ -2,9 +2,14 @@
 <html>
 
 <head>
-    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Anime Fighers Simulator - AFK Cost Calculator - by d_four</title>
+    <meta name="description"
+        content="A calculator for working out the costs of afk opening for each world in anime fighters simulator">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
+
     <style>
         .my-custom-scrollbar {
             position: relative;
@@ -32,33 +37,259 @@
             color: rgb(0, 0, 0);
             text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 253, 253);
         }
+
+        body {
+            color: #ffad16;
+            background-color: #2a2a2a;
+        }
+
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #424242;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #ffad16;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffba3a;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid" style="margin-top: 50px;">
+    <div class="container-fluid" style="margin-top: 25px;">
         <div class="row justify-content-md-center">
             <img src="images/afs-logo.png" width="300px"><img src="images/acc-logo.png">&nbsp;&nbsp;&nbsp;&nbsp; by
             d_four
         </div>
+        <hr>
         <div class="row">
-            <div class="col-4">
+            <div class="col-1"></div>
+            <div class="col-3">
                 <!-- Left -->
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
                     <table id="costsrc" class="table table-sm">
                         <tr>
-                            <th>World</th>
-                            <th>Name</th>
-                            <th>Star Cost</th>
-                            <th>Token Cost</th>
+                            <td colspan="4">Click a world below &downarrow; to set prices.</td>
+                        </tr>
+                        <tr>
+                            <th>#</th>
+                            <th><span data-toggle="tooltip" data-placement="top" title="World Name">World</span></th>
+                            <th><span data-toggle="tooltip" data-placement="top" title="Price displayed is for non VIP">
+                                    Default Cost</span></th>
+                            <th><span data-toggle="tooltip" data-placement="top"
+                                    title="Max Open Tokens per max open">Token Cost</span></th>
                         </tr>
                         <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
-                                    width="30px">
-                            </td>
-                            <td class="worldName">Super Island</td>
-                            <td class="costtd">80</td>
-                            <td class="costMaxtd">21</td>
+                            <td>31</td>
+                            <td class="worldName">TBC - 11/06 </td>
+                            <td class="costtd">2E</td>
+                            <td class="costMaxtd">5.3T</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td>30</td>
+                            <td class="worldName">Fashion Empire</td>
+                            <td class="costtd">780Q</td>
+                            <td class="costMaxtd">2.24T</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">World Of Games</td>
+                            <td class="costtd">220Q</td>
+                            <td class="costMaxtd">1.04T</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Orca Road Prison</td>
+                            <td class="costtd">66Q</td>
+                            <td class="costMaxtd">455B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Time Travel Tokyo</td>
+                            <td class="costtd">20Q</td>
+                            <td class="costMaxtd">199B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Ninja City</td>
+                            <td class="costtd">6Q</td>
+                            <td class="costMaxtd">86.4B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">The Hole</td>
+                            <td class="costtd">2Q</td>
+                            <td class="costMaxtd">40.3B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Psychic City</td>
+                            <td class="costtd">650T</td>
+                            <td class="costMaxtd">18.5B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">The Underworld</td>
+                            <td class="costtd">200T</td>
+                            <td class="costMaxtd">8.17B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Icy Wastes</td>
+                            <td class="costtd">65T</td>
+                            <td class="costMaxtd">3.75B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Kingdom Of Four</td>
+                            <td class="costtd">20T</td>
+                            <td class="costMaxtd">1.65B</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Divine Colosseum</td>
+                            <td class="costtd">7T</td>
+                            <td class="costMaxtd">800M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Flame City</td>
+                            <td class="costtd">2T</td>
+                            <td class="costMaxtd">336M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Slimey Island</td>
+                            <td class="costtd">780B</td>
+                            <td class="costMaxtd">174M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Land Of Alchemy</td>
+                            <td class="costtd">250B</td>
+                            <td class="costMaxtd">79.5M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Lucky Kingdom</td>
+                            <td class="costtd">80B</td>
+                            <td class="costMaxtd">36M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Destiny Island</td>
+                            <td class="costtd">20B</td>
+                            <td class="costMaxtd">13.8M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">9 Crimes island</td>
+                            <td class="costtd">5B</td>
+                            <td class="costMaxtd">5.28M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">XYZ Metropolis</td>
+                            <td class="costtd">1.5B</td>
+                            <td class="costMaxtd">2.29M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Cursed High</td>
+                            <td class="costtd">500M</td>
+                            <td class="costMaxtd">1.07M</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Empty Dimension</td>
+                            <td class="costtd">150M</td>
+                            <td class="costMaxtd">464K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Virtual Castle</td>
+                            <td class="costtd">40M</td>
+                            <td class="costMaxtd">185K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Chimera Jungle</td>
+                            <td class="costtd">10M</td>
+                            <td class="costMaxtd">71.1K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Ghoul Town</td>
+                            <td class="costtd">3M</td>
+                            <td class="costMaxtd">30.8K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Slayer Army</td>
+                            <td class="costtd">800K</td>
+                            <td class="costMaxtd">12.3K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Walled City</td>
+                            <td class="costtd">250K</td>
+                            <td class="costMaxtd">5.51K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Hero University</td>
+                            <td class="costtd">50K</td>
+                            <td class="costMaxtd">1.8K</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Fruits Island</td>
+                            <td class="costtd">10K</td>
+                            <td class="costMaxtd">593</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
+                                    width="30px"></td>
+                            <td class="worldName">Crazy Town</td>
+                            <td class="costtd">2.5K</td>
+                            <td class="costMaxtd">227</td>
                         </tr>
                         <tr class="trworld">
                             <td><img src="https://tr.rbxcdn.com/2c915090a107336152de93967f74bff4/150/150/Image/Png"
@@ -68,204 +299,15 @@
                             <td class="costMaxtd">53</td>
                         </tr>
                         <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Crazy Town</td>
-                            <td class="costtd">2.5k</td>
-                            <td class="costMaxtd">227</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Fruits Island</td>
-                            <td class="costtd">10k</td>
-                            <td class="costMaxtd">593</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Hero University</td>
-                            <td class="costtd">50k</td>
-                            <td class="costMaxtd">1.8k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Walled City</td>
-                            <td class="costtd">250k</td>
-                            <td class="costMaxtd">5.51k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Slayer Army</td>
-                            <td class="costtd">800k</td>
-                            <td class="costMaxtd">12.3k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Ghoul Town</td>
-                            <td class="costtd">3m</td>
-                            <td class="costMaxtd">30.8k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Chimera Jungle</td>
-                            <td class="costtd">10m</td>
-                            <td class="costMaxtd">71.1k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Virtual Castle</td>
-                            <td class="costtd">40m</td>
-                            <td class="costMaxtd">185k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Empty Dimension</td>
-                            <td class="costtd">150m</td>
-                            <td class="costMaxtd">464k</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Cursed High</td>
-                            <td class="costtd">500m</td>
-                            <td class="costMaxtd">1.07m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">XYZ Metropolis</td>
-                            <td class="costtd">1.5b</td>
-                            <td class="costMaxtd">2.29m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">9 Crimes island</td>
-                            <td class="costtd">5b</td>
-                            <td class="costMaxtd">5.28m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Destiny Island</td>
-                            <td class="costtd">20b</td>
-                            <td class="costMaxtd">13.8m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Lucky Kingdom</td>
-                            <td class="costtd">80b</td>
-                            <td class="costMaxtd">36m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Land Of Alchemy</td>
-                            <td class="costtd">250b</td>
-                            <td class="costMaxtd">79.5m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Slimey Island</td>
-                            <td class="costtd">780b</td>
-                            <td class="costMaxtd">174m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Flame City</td>
-                            <td class="costtd">2t</td>
-                            <td class="costMaxtd">336m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Divine Colosseum</td>
-                            <td class="costtd">7t</td>
-                            <td class="costMaxtd">800m</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Kingdom Of Four</td>
-                            <td class="costtd">20t</td>
-                            <td class="costMaxtd">1.65b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Icy Wastes</td>
-                            <td class="costtd">65t</td>
-                            <td class="costMaxtd">3.75b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">The Underworld</td>
-                            <td class="costtd">200t</td>
-                            <td class="costMaxtd">8.17b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Psychic City</td>
-                            <td class="costtd">650t</td>
-                            <td class="costMaxtd">18.5b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">The Hole</td>
-                            <td class="costtd">2q</td>
-                            <td class="costMaxtd">40.3b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Ninja City</td>
-                            <td class="costtd">6q</td>
-                            <td class="costMaxtd">86.4b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Time Travel Tokyo</td>
-                            <td class="costtd">20q</td>
-                            <td class="costMaxtd">199b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Orca Road Prison</td>
-                            <td class="costtd">66q</td>
-                            <td class="costMaxtd">455b</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">World Of Games</td>
-                            <td class="costtd">220q</td>
-                            <td class="costMaxtd">1.04t</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td>30 </td>
-                            <td>TBC</td>
-                            <td class="costtd">0</td>
-                            <td class="costMaxtd">0</td>
+                            <td><img src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
+                                    width="30px">
+                            </td>
+                            <td class="worldName">Super Island</td>
+                            <td class="costtd">80</td>
+                            <td class="costMaxtd">21</td>
                         </tr>
                     </table>
                 </div>
-
-
 
             </div>
             <div class="col-6">
@@ -273,87 +315,74 @@
                 <div class="row">
                     <!-- Top Bar -->
                 </div>
-                <div class="row">
-                    <!-- spacer --> &nbsp;
-                </div>
+
                 <div class="row">
                     <!-- Mid Bar -->
                     <div class="col-6">
                         <!-- Result Area-->
-                        <h2 id="info">World name</h2>
-                        <h3 id="resdisplay">
-                            &larr; Click the world</h3>
-                        <h3 id="res2display"></h3>
-                        <h3 id="res3display"></h3>
-                        <h3 id="res4display"></h3>
-                        <h3 id="res5display"></h3>
-                        <h3 id="res6display"></h3>
-                        <h3 id="res7display"></h3>
-                        <h3 id="res8display">Then click get results &darr;</h3>
-                        <h3 id="res24display"></h3>
+                        <div id="tableres" class="table-wrapper-scroll-y my-custom-scrollbar"></div>
                     </div>
                     <div class="col-6">
                         <!-- toggle area -->
 
                         <!-- Yen Cost Input -->
-                        <div class="input-group  mb-3">
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Cost per Star without VIP bonus. Click the world &leftarrow; to get all values.">
                             <div class="input-group-prepend">
                                 <span class="input-group-text  bg-info text-white">&#165;
-                                    Cost&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                    Cost</span>
                             </div>
                             <input id="inpcost" type="text" aria-label="cost" class="form-control" placeholder="100">
-                            <input id="inpmod" type="text" aria-label="mod" class="form-control" placeholder="">
+                            <input id="inpmod" type="text" aria-label="mod" class="form-control" placeholder="T"
+                                style="max-width: 50px;">
                         </div>
 
                         <!-- Max open Cost Input -->
-                        <div class="input-group  mb-3">
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Cost in tokens for a single Max Open.">
                             <div class="input-group-prepend">
                                 <span class="input-group-text  bg-info text-white">Max Token</span>
                             </div>
                             <input id="inpMaxcost" type="text" aria-label="maxcost" class="form-control"
                                 placeholder="10">
-                            <input id="maxmod" type="text" aria-label="maxmod" class="form-control" placeholder="">
+                            <input id="maxmod" type="text" aria-label="maxmod" class="form-control" placeholder="B"
+                                style="max-width: 50px;">
                         </div>
 
                         <!-- Open star count selector -->
-                        <div class="input-group  mb-3">
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="How Many stars you can open at once.">
                             <div class="input-group-prepend">
-                                <span class="input-group-text  bg-info text-white">Opens&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                <span class="input-group-text bg-info text-white">Opens</span>
                             </div>
-                            <select class="form-control" id="opensCount">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option selected>8</option>
-                            </select>
+                            <button class="btn btn-outline-info stobtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="stoCount" value="8">
+                            <button class="btn btn-outline-info stobtnplu" type="button">&plus;</button>
                         </div>
 
                         <!-- Inventory Size Input -->
-                        <div class="input-group  mb-3">
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Amount of space in your inventory.">
                             <div class="input-group-prepend">
                                 <span class="input-group-text  bg-info text-white">Inv Space</span>
                             </div>
-                            <input type="text" class="form-control" id="invSpace" value="1975">
+                            <button class="btn btn-outline-info invbtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="invSpace" value="2000">
+                            <button class="btn btn-outline-info invbtnplu" type="button">&plus;</button>
                         </div>
 
                         <!-- Fuse or Sell Selector -->
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text  bg-info text-white" for="inputGroupSelect01">Star
-                                    Use&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                                <option selected value="1">Fuse</option>
-                                <option value="2">Sell</option>
-                            </select>
+                        <div data-toggle="tooltip" data-placement="top"
+                            title="Are you fusing or selling the stars you get?" class="input-group  mb-3">
+                            <button class="btn btn-outline-info" type="button"
+                                onclick="$('#staruse').val('Fuse')">Fuse</button>
+                            <input type="text" class="form-control" id="staruse" value="Fuse">
+                            <button class="btn btn-outline-info" type="button"
+                                onclick="$('#staruse').val('Sell')">Sell</button>
                         </div>
 
                         <!-- Fast Open Game Pass Selector -->
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3 d-none">
                             <div class="input-group-prepend">
                                 <label class="input-group-text  bg-info text-white" for="inputGroupSelect02">Fast
                                     Open</label>
@@ -365,7 +394,7 @@
                         </div>
 
                         <!-- World 50K Badge selector -->
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3 d-none">
                             <div class="input-group-prepend">
                                 <label class="input-group-text  bg-info text-white" for="inputGroupSelect03">50k
                                     Badge</label>
@@ -377,10 +406,10 @@
                         </div>
 
                         <!-- VIP Pass Selector -->
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3 d-none">
                             <div class="input-group-prepend">
                                 <label class="input-group-text  bg-info text-white" for="inputGroupSelect05">VIP
-                                    Pass&nbsp;&nbsp;</label>
+                                    Pass</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect05">
                                 <option value="1">None</option>
@@ -389,7 +418,8 @@
                         </div>
 
                         <!-- Max Open Calc Selector -->
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Are you Max opening?">
                             <div class="input-group-prepend">
                                 <label class="input-group-text  bg-info text-white" for="inputGroupSelect04">Max
                                     Open</label>
@@ -399,16 +429,29 @@
                                 <option value="2">No</option>
                             </select>
                         </div>
+
+                        <!-- TimeLord count -->
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Enter the amount of TimeLord Passives you have">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white">Time Lords</span>
+                            </div>
+                            <button class="btn btn-outline-info tlbtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="tlcount" value="0">
+                            <button class="btn btn-outline-info tlbtnplu" type="button">&plus;</button>
+                        </div>
+
+                        <button id="getres" type="button" class="btn btn-info btn-block">Get Result</button>
                     </div>
                 </div>
                 <div class="row">
                     <!-- Bot Bar -->
-                    <button id="getres" type="button" class="btn btn-info btn-block">Get Result</button>
+
                     Values shown are just estimates and do not account for variations due to connection speed or<br>
                     computer performance.<br><br>
                 </div>
                 <div class="row">
-                    <span class="small">Version 1.4 - Updated 19.05.2022</span>
+                    <span class="small">Version 1.5 - Updated 30.05.2022</span>
                 </div>
                 <div class="row">
                     <a href="https://github.com/dfour/afsafk">Source Code</a>
@@ -416,69 +459,78 @@
             </div>
             <div class="col-2">
                 <div class="badgebar">
-                    <div class="img-txt-container badgeBut" info="test1">
-                        <img src="https://tr.rbxcdn.com/ead398a1f02f246c28c9418273773058/150/150/Image/Png"
-                            width="100px" alt="VIP">
-                        <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                            width="100px">
-                        <div class="img-txt-centered">VIP</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test1" data-toggle="tooltip" data-placement="top"
+                            title="Do you have the VIP game pass?">
+                            <img src="https://tr.rbxcdn.com/ead398a1f02f246c28c9418273773058/150/150/Image/Png"
+                                width="75px" alt="VIP">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">VIP</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test2"><img
-                            src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png" width="100px"
-                            alt="Fast Open">
-                        <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                            width="100px">
-                        <div class="img-txt-centered">Fast Open</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test2" data-toggle="tooltip" data-placement="top"
+                            title="Do You have the Fast Open game pass?"><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="Fast Open">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">Fast Open</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test7"><img src="images/afstimeventicon.png"
-                            width="100px">
-                        <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">x2</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test3" data-toggle="tooltip" data-placement="top"
+                            title="Have you already opened 50k stars from this world?"><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="50k badge">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">50k</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test8"><img src="images/afstimeventicon.png"
-                            width="100px">
-                        <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">x3</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test4" data-toggle="tooltip" data-placement="top"
+                            title="Do you own the Half Max open cooldown Game pass? "><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="50k badge">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">2x Max</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test9"><img src="images/afstimeventicon.png"
-                            width="100px">
-                        <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">x4</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test7" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 2x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x2</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test10"><img src="images/afstimeventicon.png"
-                            width="100px">
-                        <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">x5</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test8" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 3x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x3</div>
+                        </div>
                     </div>
-
-                    <!-- for future use
-                        <div class="img-txt-container badgeBut" info="test3"><img src="images/circleph.png" width="100px">
-                        <img class="clh" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">text</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test9" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 4x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x4</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test4"><img src="images/circleph.png" width="100px">
-                        <img class="clh" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">text</div>
+                    <div class="row">
+                        <div class="img-txt-container badgeBut" info="test10" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 5x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x5</div>
+                        </div>
                     </div>
-                    <div class="img-txt-container badgeBut" info="test5"><img src="images/circleph.png" width="100px">
-                        <img class="clh" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">text</div>
-                    </div>
-                    <div class="img-txt-container badgeBut" info="test6"><img src="images/circleph.png" width="100px">
-                        <img class="clh" style="position:absolute;left: 0;top: 0; display: none;"
-                            src="images/greensorcle.png" width="100px">
-                        <div class="img-txt-centered">text</div>
-                    </div>
-
-                    -->
-
                 </div>
             </div>
         </div>
@@ -490,7 +542,7 @@
         </div>
     </div>
 
-    <!-- Free counter code-->
+    <!-- Free counter code --/>
     <div id="sfc4teer55qy5fbfqsg5xeesnwjxlmwx6tl"></div>
     <script type="text/javascript"
         src="https://counter9.stat.ovh/private/counter.js?c=4teer55qy5fbfqsg5xeesnwjxlmwx6tl&down=async" async></script>
@@ -501,10 +553,13 @@
     <!-- end free counter code-->
 
     <script>
-        /**  TODO
-         *  Add hour field
-         *  Add time event mod
-         * */
+        /** 
+        * v1.5
+        *  World 30 and 31 (estimates)
+        *  Altered Style
+        *  Added tooltips
+        *  Added Max Open Game pass for cost and maxopen token
+        **/
         // Control and calculate results here
 
         // hard vars
@@ -512,7 +567,10 @@
         defaultMaxOpensPerHour = 40 // how many max opens can be done in a hour
         defaultSellRate = 0.25      // value returned for sell (avg)
         timeEventMod = 1            // stores modifier for time event
+        timeLordsMod = 0            // for time lord multiplier
+        maxOpenPass = 2             // max open pass (1 for normal, 2 for own)
         modLetters = " KMBTQEZYXWVU"  // modifiers for currency
+        wname = ""
 
         // useful functions
 
@@ -542,7 +600,7 @@
                 cps = cps * 0.75 // 25% discount for VIP
             }
 
-            fc = cps * (defaultMaxOpensPerHour * timeEventMod) * invSpace
+            fc = cps * ((defaultMaxOpensPerHour * maxOpenPass) * (timeEventMod + timeLordsMod)) * invSpace
             sellprice = 0
             if (fuseSell == 2) {
                 sellprice = fc * defaultSellRate
@@ -564,13 +622,10 @@
         function populateCost(stringVal, maxStringVal) {
             cost = costModConvert(stringVal)
             maxcost = costModConvert(maxStringVal)
-
             $("#inpcost").val(cost[0])
             $("#inpmod").val(cost[1])
-
             $("#inpMaxcost").val(maxcost[0])
             $("#maxmod").val(maxcost[1])
-
         }
 
         function costModConvert(stringVal) {
@@ -583,10 +638,28 @@
         }
 
         function getOneHourMaxToken(cpmo) {
-            return cpmo * 40
+            return cpmo * ((defaultMaxOpensPerHour * maxOpenPass) * (timeEventMod + timeLordsMod))
         }
 
+        // create html table with results
+        function getTableResult(title, cost, maxCost, mod, mmod) {
+            table = "<table class='table table-sm'><tr><th class='text-center' colspan='3'>" + title + "</th></tr>"
+            table += "<tr><td colspan='3'>" + timeBetweenMO() + " seconds per Max Open</td></tr>"
+            table += "<tr><th>Hours</th><th>Yen</th><th>Tokens</th></tr>"
+            for (let index = 1; index <= 24; index++) {
+                table += "<tr><td>" + index + " hour" + (index > 1 ? "s" : "") + "</td><td>" +
+                    convertToFormatted(cost * index, mod) + "</td><td>" +
+                    convertToFormatted(maxCost * index, mmod) + "</td></tr>"
+            }
+            table += "</tabl>"
+            return table
+        }
 
+        function timeBetweenMO() {
+            mot = 90 * (1 / maxOpenPass) * (1 / (timeEventMod + timeLordsMod))
+            mot = parseFloat(mot.toFixed(2))
+            return mot
+        }
 
         // respond to Clicks
         $("#getres").click(function (e) {
@@ -594,13 +667,14 @@
             mod = $("#inpmod").val()
             mcost = $("#inpMaxcost").val()
             mmod = $("#maxmod").val()
-            openCount = $("#opensCount").val()
+            openCount = parseInt($("#stoCount").val())
             invSpace = $("#invSpace").val()
-            fuseSell = $("#inputGroupSelect01").val()   // 1 = fuse | 2 = Sell
+            fuseSell = $("#staruse").val() == "Fuse" ? 1 : 2  // 1 = fuse | 2 = Sell
             gPass = $("#inputGroupSelect02").val()      // 1 = None | 2 = Owned
             fiftyk = $("#inputGroupSelect03").val()     // 1 = None | 2 = Owned
             doMax = $("#inputGroupSelect04").val()      // 1 = Yes  | 2 = No
             vip = $("#inputGroupSelect05").val()        // 1 = No   | 2 = Yes
+            timeLordsMod = parseInt($("#tlcount").val()) * 0.25
 
             res = getCostOfHourOpens(cost, openCount, gPass, fiftyk, fuseSell, vip)
             mres = 0
@@ -609,45 +683,56 @@
                 mres = getOneHourMaxToken(mcost)
             }
 
+            $("#tableres").html(getTableResult(wname, res, mres, mod, mmod))
 
-            hour1 = convertToFormatted(res, mod)
-            hour2 = convertToFormatted(res * 2, mod)
-            hour3 = convertToFormatted(res * 3, mod)
-            hour4 = convertToFormatted(res * 4, mod)
-            hour5 = convertToFormatted(res * 5, mod)
-            hour6 = convertToFormatted(res * 6, mod)
-            hour7 = convertToFormatted(res * 7, mod)
-            hour8 = convertToFormatted(res * 8, mod)
-            hour24 = convertToFormatted(res * 24, mod)
-
-            hourM1 = convertToFormatted(mres, mmod)
-            hourM2 = convertToFormatted(mres * 2, mmod)
-            hourM3 = convertToFormatted(mres * 3, mmod)
-            hourM4 = convertToFormatted(mres * 4, mmod)
-            hourM5 = convertToFormatted(mres * 5, mmod)
-            hourM6 = convertToFormatted(mres * 6, mmod)
-            hourM7 = convertToFormatted(mres * 7, mmod)
-            hourM8 = convertToFormatted(mres * 8, mmod)
-            hourM24 = convertToFormatted(mres * 24, mod)
-
-            $("#resdisplay").html(hour1 + " for 1 hour  (" + hourM1 + " tokens)")
-            $("#res2display").html(hour2 + " for 2 hours (" + hourM2 + " tokens)")
-            $("#res3display").html(hour3 + " for 3 hours (" + hourM3 + " tokens)")
-            $("#res4display").html(hour4 + " for 4 hours (" + hourM4 + " tokens)")
-            $("#resd5isplay").html(hour5 + " for 5 hours (" + hourM5 + " tokens)")
-            $("#res6display").html(hour6 + " for 6 hours (" + hourM6 + " tokens)")
-            $("#res7display").html(hour7 + " for 7 hours (" + hourM7 + " tokens)")
-            $("#res8display").html(hour8 + " for 8 hours (" + hourM8 + " tokens)")
-            $("#res24display").html(hour24 + " for 24 hours (" + hourM24 + " tokens)")
         });
 
         $(".trworld").click(function () {
             ffs = $(this)
             costtd = ffs.find("td.costtd").html()
             costMaxtd = ffs.find("td.costMaxtd").html()
-            worldName = ffs.find("td.worldName").html()
-            $("#info").html(worldName)
+            wname = ffs.find("td.worldName").html()
+            $("#info").html(wname)
             populateCost(costtd, costMaxtd)
+        });
+
+        $(".invbtnmin").click(function () {
+            oldv = $("#invSpace").val()
+            newv = parseInt(oldv) - 25
+            newv = newv < 0 ? 0 : newv
+            $("#invSpace").val(newv)
+        });
+
+        $(".invbtnplu").click(function () {
+            oldv = $("#invSpace").val()
+            newv = parseInt(oldv) + 25
+            $("#invSpace").val(newv)
+        });
+
+        $(".stobtnmin").click(function () {
+            oldv = $("#stoCount").val()
+            newv = parseInt(oldv) - 1
+            newv = newv < 0 ? 0 : newv
+            $("#stoCount").val(newv)
+        });
+
+        $(".stobtnplu").click(function () {
+            oldv = $("#stoCount").val()
+            newv = parseInt(oldv) + 1
+            $("#stoCount").val(newv)
+        });
+
+        $(".tlbtnmin").click(function () {
+            oldv = $("#tlcount").val()
+            newv = parseInt(oldv) - 1
+            newv = newv < 0 ? 0 : newv
+            $("#tlcount").val(newv)
+        });
+
+        $(".tlbtnplu").click(function () {
+            oldv = $("#tlcount").val()
+            newv = parseInt(oldv) + 1
+            $("#tlcount").val(newv)
         });
 
         $(".badgeBut").click(function () {
@@ -669,8 +754,20 @@
                     }
 
                     break;
-                case "test3": break;
-                case "test4": break;
+                case "test3":
+                    if ($("#inputGroupSelect03").val() == "1") {
+                        $("#inputGroupSelect03").val("2")
+                    } else {
+                        $("#inputGroupSelect03").val("1")
+                    }
+                    break;
+                case "test4":
+                    if (maxOpenPass == 1) {
+                        maxOpenPass = 2
+                    } else {
+                        maxOpenPass = 1
+                    }
+                    break;
                 case "test5": break;
                 case "test6": break;
                 case "test7":
@@ -720,6 +817,11 @@
             badgebar = object.closest(".badgebar")
             badgebar.find(".timeMod").toggle(false)
         }
+
+        // initial tooltips
+        $('document').ready(function () {
+            $('[data-toggle=tooltip]').tooltip();
+        });
 
     </script>
 </body>

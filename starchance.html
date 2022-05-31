@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .my-custom-scrollbar {
+            position: relative;
+            height: 600px;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+
+        .img-txt-container {
+            position: relative;
+            text-align: center;
+            color: white;
+            display: inline-block;
+        }
+
+        .img-txt-centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bolder;
+            color: rgb(0, 0, 0);
+            text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 253, 253);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" style="margin-top: 50px;">
+        <div class="row justify-content-md-center">
+            <!--
+            <img src="images/afs-logo.png" width="300px">
+            <img src="images/acc-logo.png">&nbsp;&nbsp;&nbsp;&nbsp; 
+            -->
+            by
+            d_four
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <!-- Left -->
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table id="costsrc" class="table table-sm">
+                        <tr>
+                            <th>World</th>
+                            <th>World Name</th>
+                            <th>World Luck Modifier</th>
+                            <th class="hidden d-none">World</th>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
+                                    width="15px">
+                            </td>
+                            <td class="worldName">Super Island</td>
+                            <td class="costtd">5</td>
+                            <td class="wrldnum d-none hidden">1</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/2c915090a107336152de93967f74bff4/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Ninja Village</td>
+                            <td class="costtd">5</td>
+                            <td class="wrldnum d-none hidden">2</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Crazy Town</td>
+                            <td class="costtd">4</td>
+                            <td class="wrldnum d-none hidden">3</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Fruits Island</td>
+                            <td class="costtd">4</td>
+                            <td class="wrldnum d-none hidden">4</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Hero University</td>
+                            <td class="costtd">3</td>
+                            <td class="wrldnum d-none hidden">5</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Walled City</td>
+                            <td class="costtd">3</td>
+                            <td class="wrldnum d-none hidden">6</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Slayer Army</td>
+                            <td class="costtd">2</td>
+                            <td class="wrldnum d-none hidden">7</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Ghoul Town</td>
+                            <td class="costtd">2</td>
+                            <td class="wrldnum d-none hidden">8</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Chimera Jungle</td>
+                            <td class="costtd">1</td>
+                            <td class="wrldnum d-none hidden">9</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Virtual Castle</td>
+                            <td class="costtd">1</td>
+                            <td class="wrldnum d-none hidden">10</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Empty Dimension</td>
+                            <td class="costtd">0</td>
+                            <td class="wrldnum d-none hidden">11</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Cursed High</td>
+                            <td class="costtd">0</td>
+                            <td class="wrldnum d-none hidden">12</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">XYZ Metropolis</td>
+                            <td class="costtd">-1</td>
+                            <td class="wrldnum d-none hidden">13</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">9 Crimes island</td>
+                            <td class="costtd">-1</td>
+                            <td class="wrldnum d-none hidden">14</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Destiny Island</td>
+                            <td class="costtd">-2</td>
+                            <td class="wrldnum d-none hidden">15</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Lucky Kingdom</td>
+                            <td class="costtd">-2</td>
+                            <td class="wrldnum d-none hidden">16</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Land Of Alchemy</td>
+                            <td class="costtd">-3</td>
+                            <td class="wrldnum d-none hidden">17</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Slimey Island</td>
+                            <td class="costtd">-3</td>
+                            <td class="wrldnum d-none hidden">18</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Flame City</td>
+                            <td class="costtd">-4</td>
+                            <td class="wrldnum d-none hidden">19</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Divine Colosseum</td>
+                            <td class="costtd">-4</td>
+                            <td class="wrldnum d-none hidden">20</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Kingdom Of Four</td>
+                            <td class="costtd">-5</td>
+                            <td class="wrldnum d-none hidden">21</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Icy Wastes</td>
+                            <td class="costtd">-5</td>
+                            <td class="wrldnum d-none hidden">22</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">The Underworld</td>
+                            <td class="costtd">-6</td>
+                            <td class="wrldnum d-none hidden">23</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Psychic City</td>
+                            <td class="costtd">-6</td>
+                            <td class="wrldnum d-none hidden">24</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">The Hole</td>
+                            <td class="costtd">-7</td>
+                            <td class="wrldnum d-none hidden">25</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Ninja City</td>
+                            <td class="costtd">-7</td>
+                            <td class="wrldnum d-none hidden">26</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Time Travel Tokyo</td>
+                            <td class="costtd">-8</td>
+                            <td class="wrldnum d-none hidden">27</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">Orca Road Prison</td>
+                            <td class="costtd">-8</td>
+                            <td class="wrldnum d-none hidden">28</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td><img src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
+                                    width="15px"></td>
+                            <td class="worldName">World Of Games</td>
+                            <td class="costtd">-9</td>
+                            <td class="wrldnum d-none hidden">29</td>
+                        </tr>
+                        <tr class="trworld">
+                            <td>30 </td>
+                            <td>TBC</td>
+                            <td class="costtd">-9</td>
+                            <td class="wrldnum d-none hidden">30</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+
+            </div>
+            <div class="col-6">
+                <!-- Main Area -->
+                <div class="row">
+                    <!-- Top Bar -->
+                </div>
+                <div class="row">
+                    <!-- spacer --> &nbsp;
+                </div>
+                <div class="row">
+                    <!-- Mid Bar -->
+                    <div class="col-6">
+                        <!-- Result Area-->
+                        <h3 id="resdisplay">-----</h3>
+                    </div>
+                    <div class="col-6">
+                        <!-- toggle area -->
+                        <div class="input-group  mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white">Luck</span>
+                            </div>
+                            <input id="luckval" type="text" aria-label="cost" class="form-control" value="14">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Bot Bar -->
+
+                </div>
+                <div class="row">
+                    <span class="small">Version 0.1 - Updated 19.05.2022</span>
+                </div>
+                <div class="row">
+                    <!-- source link -->
+                    <a href="https://github.com/dfour/afsafk">Source Code</a>
+                </div>
+            </div>
+            <div class="col-2">
+                <!-- right bar -->
+                rb
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">&nbsp;</div>
+        </div>
+        <div class="row">
+            &there4; &nbsp; &sup;_&fnof;&deg;&micro;&and;
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                where here
+            </div>
+            <div class="col-1"></div>
+
+
+        </div>
+        <div class="row">
+            &there4; &nbsp; &sup;_&fnof;&deg;&micro;&and;
+        </div>
+    </div>
+
+
+    <script>
+        divchance = 0.00000018
+        worldLuckIndex = [5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0, 0, -1, -1, -2, -2, -3, -3, -4, -4, -5, -5, -6, -6, -7, -7, -8, -8, -9, -9, -10, -10, -11, -11] // these are guestimates(get real vals)
+        divn = ["Veg", "Mad", "Her", "Mew", "Red", "End", "Gil", "Kai"]
+
+
+
+        function getChanceValue(wid, luck) {
+            divid = Math.ceil((wid + 1) * 0.25)
+            div1 = divn[divid]
+            if (divid - 1 > 0) {
+                div2 = divn[divid - 1]
+            }
+
+            wl = luck + worldLuckIndex[wid]
+            awl = Math.pow(Math.abs(wl - 10) + 1, 2.5)
+            dvrmod = (400 - awl) * 0.0025
+            chance = dvrmod * divchance
+
+            return chance
+        }
+
+        $(".trworld").click(function () {
+            luck = $("#luckval").val()
+            wid = parseInt($(this).find("td.wrldnum").html())
+
+            result = getChanceValue(wid, luck)
+
+            $("#resdisplay").html(result + "pc")
+        });
+
+    </script>
+</body>
+
+</html>
