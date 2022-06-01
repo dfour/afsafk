@@ -2,9 +2,6 @@
 <html>
 
 <head>
-    <title>Anime Fighers Simulator - AFK Cost Calculator - by d_four</title>
-    <meta name="description"
-        content="A calculator for working out the costs of afk opening for each world in anime fighters simulator">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -73,15 +70,17 @@
             d_four
         </div>
         <hr>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-3">
+        <div class="row justify-content-center">
+            <div class="col-4">
                 <!-- Left -->
+                <div class="card" style="min-height:110px">
+                    <div class="card-body">
+                        <h5 class="card-title">STEP 1</h5>
+                        <p class="card-text">Click on a world below to set the Prices</p>
+                    </div>
+                </div>
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
                     <table id="costsrc" class="table table-sm">
-                        <tr>
-                            <td colspan="4">Click a world below &downarrow; to set prices.</td>
-                        </tr>
                         <tr>
                             <th>#</th>
                             <th><span data-toggle="tooltip" data-placement="top" title="World Name">World</span></th>
@@ -97,10 +96,9 @@
                             <td class="costMaxtd">5.3T</td>
                         </tr>
                         <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/45e245fb74bb4f9086ffaa55a8e9721a/150/150/Image/Png"
-                                    width="30px"></td>
+                            <td>30</td>
                             <td class="worldName">Fashion Empire</td>
-                            <td class="costtd">660Q</td>
+                            <td class="costtd">780Q</td>
                             <td class="costMaxtd">2.24T</td>
                         </tr>
                         <tr class="trworld">
@@ -311,6 +309,89 @@
                 </div>
 
             </div>
+            <div class="col-2">
+                <!-- Badge Row-->
+                <div class="card" style="min-height:110px">
+                    <div class="card-body">
+                        <h5 class="card-title">STEP 2</h5>
+                        <p class="card-text">Choose Badges &amp; events</p>
+                    </div>
+                </div>
+                <div class="badgebar">
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test1" data-toggle="tooltip" data-placement="top"
+                            title="Do you have the VIP game pass?">
+                            <img src="https://tr.rbxcdn.com/ead398a1f02f246c28c9418273773058/150/150/Image/Png"
+                                width="75px" alt="VIP">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">VIP</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test2" data-toggle="tooltip" data-placement="top"
+                            title="Do You have the Fast Open game pass?"><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="Fast Open">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">Fast Open</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test3" data-toggle="tooltip" data-placement="top"
+                            title="Have you already opened 50k stars from this world?"><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="50k badge">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">50k</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test4" data-toggle="tooltip" data-placement="top"
+                            title="Do you own the Half Max open cooldown Game pass? "><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="50k badge">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">2x Max</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test7" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 2x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x2</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test8" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 3x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x3</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test9" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 4x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x4</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test10" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 5x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-6">
                 <!-- Main Area -->
                 <div class="row">
@@ -319,13 +400,14 @@
 
                 <div class="row">
                     <!-- Mid Bar -->
-                    <div class="col-6">
-                        <!-- Result Area-->
-                        <div id="tableres" class="table-wrapper-scroll-y my-custom-scrollbar"></div>
-                    </div>
-                    <div class="col-6">
+                    <div class="col-5">
                         <!-- toggle area -->
-
+                        <div class="card" style="min-height:110px">
+                            <div class="card-body">
+                                <h5 class="card-title">STEP 3</h5>
+                                <p class="card-text">Additional options; Inventory, Star opens, Time lords etc.</p>
+                            </div>
+                        </div>
                         <!-- Yen Cost Input -->
                         <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
                             title="Cost per Star without VIP bonus. Click the world &leftarrow; to get all values.">
@@ -444,6 +526,16 @@
 
                         <button id="getres" type="button" class="btn btn-info btn-block">Get Result</button>
                     </div>
+                    <div class="col-7">
+                        <!-- Result Area-->
+                        <div class="card" style="min-height:110px">
+                            <div class="card-body">
+                                <h5 class="card-title">STEP 4</h5>
+                                <p class="card-text">See all the results for you</p>
+                            </div>
+                        </div>
+                        <div id="tableres" class="table-wrapper-scroll-y my-custom-scrollbar"></div>
+                    </div>
                 </div>
                 <div class="row">
                     <!-- Bot Bar -->
@@ -458,82 +550,7 @@
                     <a href="https://github.com/dfour/afsafk">Source Code</a>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="badgebar">
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test1" data-toggle="tooltip" data-placement="top"
-                            title="Do you have the VIP game pass?">
-                            <img src="https://tr.rbxcdn.com/ead398a1f02f246c28c9418273773058/150/150/Image/Png"
-                                width="75px" alt="VIP">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">VIP</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test2" data-toggle="tooltip" data-placement="top"
-                            title="Do You have the Fast Open game pass?"><img
-                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
-                                width="75px" alt="Fast Open">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">Fast Open</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test3" data-toggle="tooltip" data-placement="top"
-                            title="Have you already opened 50k stars from this world?"><img
-                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
-                                width="75px" alt="50k badge">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">50k</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test4" data-toggle="tooltip" data-placement="top"
-                            title="Do you own the Half Max open cooldown Game pass? "><img
-                                src="https://tr.rbxcdn.com/3a58834ce149e291a0a543e70cde2e6f/150/150/Image/Png"
-                                width="75px" alt="50k badge">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">2x Max</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test7" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 2x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x2</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test8" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 3x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x3</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test9" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 4x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x4</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test10" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 5x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x5</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-1">&nbsp;</div>
@@ -543,7 +560,7 @@
         </div>
     </div>
 
-    <!-- Free counter code -->
+    <!-- Free counter code --/>
     <div id="sfc4teer55qy5fbfqsg5xeesnwjxlmwx6tl"></div>
     <script type="text/javascript"
         src="https://counter9.stat.ovh/private/counter.js?c=4teer55qy5fbfqsg5xeesnwjxlmwx6tl&down=async" async></script>
@@ -560,13 +577,11 @@
         *  Altered Style
         *  Added tooltips
         *  Added Max Open Game pass for cost and maxopen token
-        * 
-        *  
         **/
         // Control and calculate results here
 
         // hard vars
-        defaultOpenPerHour = 592   // how many opens an be done in an hour
+        defaultOpenPerHour = 592.1   // how many opens an be done in an hour
         defaultMaxOpensPerHour = 40 // how many max opens can be done in a hour
         defaultSellRate = 0.25      // value returned for sell (avg)
         timeEventMod = 1            // stores modifier for time event
