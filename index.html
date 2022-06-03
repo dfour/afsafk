@@ -2,9 +2,6 @@
 <html>
 
 <head>
-    <title>Anime Fighers Simulator - AFK Cost Calculator - by d_four</title>
-    <meta name="description"
-        content="A calculator for working out the costs of afk opening for each world in anime fighters simulator">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -39,8 +36,8 @@
         }
 
         body {
-            color: #ffad16;
-            background-color: #2a2a2a;
+            color: #dff3ff;
+            background-color: #525252;
         }
 
 
@@ -56,260 +53,373 @@
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-            background: #ffad16;
+            background: #dff3ff;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: #ffba3a;
+            background: #f4fbff;
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid" style="margin-top: 25px;">
+    <div class="container" style="margin-top: 25px;">
         <div class="row justify-content-md-center">
             <img src="images/afs-logo.png" width="300px"><img src="images/acc-logo.png">&nbsp;&nbsp;&nbsp;&nbsp; by
             d_four
         </div>
         <hr>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-3">
+        <div class="row justify-content-center">
+            <div class="col-4">
                 <!-- Left -->
-                <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                    <table id="costsrc" class="table table-sm">
-                        <tr>
-                            <td colspan="4">Click a world below &downarrow; to set prices.</td>
-                        </tr>
-                        <tr>
-                            <th>#</th>
-                            <th><span data-toggle="tooltip" data-placement="top" title="World Name">World</span></th>
-                            <th><span data-toggle="tooltip" data-placement="top" title="Price displayed is for non VIP">
-                                    Default Cost</span></th>
-                            <th><span data-toggle="tooltip" data-placement="top"
-                                    title="Max Open Tokens per max open">Token Cost</span></th>
-                        </tr>
-                        <tr class="trworld">
-                            <td>31</td>
-                            <td class="worldName">TBC - 11/06 </td>
-                            <td class="costtd">2E</td>
-                            <td class="costMaxtd">5.3T</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/45e245fb74bb4f9086ffaa55a8e9721a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Fashion Empire</td>
-                            <td class="costtd">660Q</td>
-                            <td class="costMaxtd">2.24T</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">World Of Games</td>
-                            <td class="costtd">220Q</td>
-                            <td class="costMaxtd">1.04T</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Orca Road Prison</td>
-                            <td class="costtd">66Q</td>
-                            <td class="costMaxtd">455B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Time Travel Tokyo</td>
-                            <td class="costtd">20Q</td>
-                            <td class="costMaxtd">199B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Ninja City</td>
-                            <td class="costtd">6Q</td>
-                            <td class="costMaxtd">86.4B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">The Hole</td>
-                            <td class="costtd">2Q</td>
-                            <td class="costMaxtd">40.3B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Psychic City</td>
-                            <td class="costtd">650T</td>
-                            <td class="costMaxtd">18.5B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">The Underworld</td>
-                            <td class="costtd">200T</td>
-                            <td class="costMaxtd">8.17B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Icy Wastes</td>
-                            <td class="costtd">65T</td>
-                            <td class="costMaxtd">3.75B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Kingdom Of Four</td>
-                            <td class="costtd">20T</td>
-                            <td class="costMaxtd">1.65B</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Divine Colosseum</td>
-                            <td class="costtd">7T</td>
-                            <td class="costMaxtd">800M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Flame City</td>
-                            <td class="costtd">2T</td>
-                            <td class="costMaxtd">336M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Slimey Island</td>
-                            <td class="costtd">780B</td>
-                            <td class="costMaxtd">174M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Land Of Alchemy</td>
-                            <td class="costtd">250B</td>
-                            <td class="costMaxtd">79.5M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Lucky Kingdom</td>
-                            <td class="costtd">80B</td>
-                            <td class="costMaxtd">36M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Destiny Island</td>
-                            <td class="costtd">20B</td>
-                            <td class="costMaxtd">13.8M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">9 Crimes island</td>
-                            <td class="costtd">5B</td>
-                            <td class="costMaxtd">5.28M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">XYZ Metropolis</td>
-                            <td class="costtd">1.5B</td>
-                            <td class="costMaxtd">2.29M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Cursed High</td>
-                            <td class="costtd">500M</td>
-                            <td class="costMaxtd">1.07M</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Empty Dimension</td>
-                            <td class="costtd">150M</td>
-                            <td class="costMaxtd">464K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Virtual Castle</td>
-                            <td class="costtd">40M</td>
-                            <td class="costMaxtd">185K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Chimera Jungle</td>
-                            <td class="costtd">10M</td>
-                            <td class="costMaxtd">71.1K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Ghoul Town</td>
-                            <td class="costtd">3M</td>
-                            <td class="costMaxtd">30.8K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Slayer Army</td>
-                            <td class="costtd">800K</td>
-                            <td class="costMaxtd">12.3K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Walled City</td>
-                            <td class="costtd">250K</td>
-                            <td class="costMaxtd">5.51K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Hero University</td>
-                            <td class="costtd">50K</td>
-                            <td class="costMaxtd">1.8K</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Fruits Island</td>
-                            <td class="costtd">10K</td>
-                            <td class="costMaxtd">593</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Crazy Town</td>
-                            <td class="costtd">2.5K</td>
-                            <td class="costMaxtd">227</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/2c915090a107336152de93967f74bff4/150/150/Image/Png"
-                                    width="30px"></td>
-                            <td class="worldName">Ninja Village</td>
-                            <td class="costtd">300</td>
-                            <td class="costMaxtd">53</td>
-                        </tr>
-                        <tr class="trworld">
-                            <td><img src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
-                                    width="30px">
-                            </td>
-                            <td class="worldName">Super Island</td>
-                            <td class="costtd">80</td>
-                            <td class="costMaxtd">21</td>
-                        </tr>
-                    </table>
+                <div class="card" style="min-height:175px">
+                    <div class="card-body">
+                        <h5 class="card-title">STEP 1</h5>
+                        <p class="card-text">Click on a world below to set the Prices</p>
+                        <div class="text-center">
+                            <h5 id="spyworld">WORLD</h5>
+                        </div>
+                        <div class="row justify-content-md-center costspy">
+                            <div class="col-4">&yen; Cost: <span id="spyyen">---</span></div>
+                            <div class="col-4">&star; Cost: <span id="spytoken">---</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 10px;">&nbsp;</div>
+                <div>
+                    <div class="text-center worldbar">
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;2E &star;5.3T" data-yen="2E" data-token="5.3T" data-world="TBC - 11/06">
+                            <img src="images/nextworld-icon.png" width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;780Q &star;2.24T" data-yen="780Q" data-token="2.24T"
+                            data-world="Fashion Empire">
+                            <img src="https://tr.rbxcdn.com/45e245fb74bb4f9086ffaa55a8e9721a/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;220Q &star;1.04T" data-yen="220Q" data-token="1.04T"
+                            data-world="World Of Games">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" ata-toggle="tooltip" data-placement="top"
+                            title="&yen;66Q &star;455B" data-yen="66Q" data-token="455B" data-world="Orca Road Prison">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;20Q &star;199B" data-yen="20Q" data-token="199B" data-world="Time Travel Tokyo">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;6Q &star;86.4B" data-yen="6Q" data-token="86.4B" data-world="Ninja City">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;2Q &star;40.3B" data-yen="2Q" data-token="40.3B" data-world="The Hole">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;650T &star;8.5B" data-yen="650T" data-token="8.5B" data-world="Psychic City">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;200T &star;.17B" data-yen="200T" data-token=".17B" data-world="The Underworld">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;5T &star;3.75B" data-yen="5T" data-token="3.75B" data-world="Icy Wastes">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;20T &star;1.65B" data-yen="20T" data-token="1.65B" data-world="Kingdom Of Four">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;7T &star;800M" data-yen="7T" data-token="800M" data-world="Divine Colosseum">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;2T &star;336M" data-yen="2T" data-token="336M" data-world="Flame City">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;780B &star;174M" data-yen="780B" data-token="174M" data-world="Slimey Island">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;250B &star;79.5M" data-yen="250B" data-token="79.5M"
+                            data-world="Land Of Alchemy">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;80B &star;36M" data-yen="80B" data-token="36M" data-world="Lucky Kingdom">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;20B &star;13.8M" data-yen="20B" data-token="13.8M" data-world="Destiny Island">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;5B &star;2.24T" data-yen="5B" data-token="2.24T" data-world="9 Crimes island">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;1.5B &star;2.29M" data-yen="1.5B" data-token="2.29M"
+                            data-world="XYZ Metropolis">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;500M &star;1.07M" data-yen="500M" data-token="1.07M" data-world="Cursed High">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;150M &star;464K" data-yen="150M" data-token="464K" data-world="Empty Dimension">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;40M &star;185K" data-yen="40M" data-token="185K" data-world="Virtual Castle">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;10M &star;71.1K" data-yen="10M" data-token="71.1K" data-world="Chimera Jungle">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;3M &star;30.8K" data-yen="3M" data-token="30.8K" data-world="Ghoul Town">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;800K &star;12.3K" data-yen="800K" data-token="12.3K" data-world="Slayer Army">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;250K &star;5.51K" data-yen="250K" data-token="5.51K" data-world="Walled City">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;50K &star;1.8K" data-yen="50K" data-token="1.8K" data-world="Hero University">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;10K &star;593" data-yen="10K" data-token="593" data-world="Fruits Island">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;2.5K &star;227" data-yen="2.5K" data-token="227" data-world="Crazy Town">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;300 &star;53" data-yen="300" data-token="53" data-world="Ninja Village">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/2c915090a107336152de93967f74bff4/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;80 &star;21" data-yen="80" data-token="21" data-world="Super Island">
+                            <img class="imgsel"
+                                src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
+                                width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+                    </div>
                 </div>
 
+            </div>
+            <div class="col-2">
+
+                <!-- Badge Row-->
+                <div class="card" style="min-height:175px">
+                    <div class="card-body">
+                        <h5 class="card-title">STEP 2</h5>
+                        <p class="card-text">Select game passes &amp; events</p>
+                    </div>
+                </div>
+                <div style="height: 10px;">&nbsp;</div>
+                <div class="badgebar">
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test1" data-toggle="tooltip" data-placement="top"
+                            title="Do you have the VIP game pass?">
+                            <img src="https://tr.rbxcdn.com/ead398a1f02f246c28c9418273773058/150/150/Image/Png"
+                                width="75px" alt="VIP">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">VIP</div>
+                        </div>
+                        <div class="img-txt-container badgeBut" info="test2" data-toggle="tooltip" data-placement="top"
+                            title="Do You have the Fast Open game pass?"><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="Fast Open">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">Fast Open</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test3" data-toggle="tooltip" data-placement="top"
+                            title="Have you already opened 50k stars from this world?"><img
+                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
+                                width="75px" alt="50k badge">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">50k</div>
+                        </div>
+                        <div class="img-txt-container badgeBut" info="test4" data-toggle="tooltip" data-placement="top"
+                            title="Do you own the Half Max open cooldown Game pass? "><img
+                                src="https://tr.rbxcdn.com/3a58834ce149e291a0a543e70cde2e6f/150/150/Image/Png"
+                                width="75px" alt="50k badge">
+                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
+                                width="75px">
+                            <div class="img-txt-centered">2x Max</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test7" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 2x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x2</div>
+                        </div>
+                        <div class="img-txt-container badgeBut" info="test8" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 3x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x3</div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="img-txt-container badgeBut" info="test9" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 4x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x4</div>
+                        </div>
+                        <div class="img-txt-container badgeBut" info="test10" data-toggle="tooltip" data-placement="top"
+                            title="Is it a 5x Time Event?"><img src="images/afstimeventicon.png" width="75px">
+                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                            <div class="img-txt-centered">Event x5</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-6">
                 <!-- Main Area -->
@@ -319,13 +429,15 @@
 
                 <div class="row">
                     <!-- Mid Bar -->
-                    <div class="col-6">
-                        <!-- Result Area-->
-                        <div id="tableres" class="table-wrapper-scroll-y my-custom-scrollbar"></div>
-                    </div>
-                    <div class="col-6">
+                    <div class="col-5">
                         <!-- toggle area -->
-
+                        <div class="card" style="min-height:175px">
+                            <div class="card-body">
+                                <h5 class="card-title">STEP 3</h5>
+                                <p class="card-text">Additional options; Inventory, Star opens, Time lords etc.</p>
+                            </div>
+                        </div>
+                        <div style="height: 10px;">&nbsp;</div>
                         <!-- Yen Cost Input -->
                         <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
                             title="Cost per Star without VIP bonus. Click the world &leftarrow; to get all values.">
@@ -342,7 +454,7 @@
                         <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
                             title="Cost in tokens for a single Max Open.">
                             <div class="input-group-prepend">
-                                <span class="input-group-text  bg-info text-white">Max Token</span>
+                                <span class="input-group-text  bg-info text-white"> &star; Max Token</span>
                             </div>
                             <input id="inpMaxcost" type="text" aria-label="maxcost" class="form-control"
                                 placeholder="10">
@@ -354,7 +466,7 @@
                         <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
                             title="How Many stars you can open at once.">
                             <div class="input-group-prepend">
-                                <span class="input-group-text bg-info text-white">Opens</span>
+                                <span class="input-group-text bg-info text-white">&#x272D; Opens</span>
                             </div>
                             <button class="btn btn-outline-info stobtnmin" type="button">&minus;</button>
                             <input type="text" class="form-control" id="stoCount" value="8">
@@ -365,7 +477,7 @@
                         <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
                             title="Amount of space in your inventory.">
                             <div class="input-group-prepend">
-                                <span class="input-group-text  bg-info text-white">Inv Space</span>
+                                <span class="input-group-text  bg-info text-white">&#8862; Inv Space</span>
                             </div>
                             <button class="btn btn-outline-info invbtnmin" type="button">&minus;</button>
                             <input type="text" class="form-control" id="invSpace" value="2000">
@@ -376,10 +488,10 @@
                         <div data-toggle="tooltip" data-placement="top"
                             title="Are you fusing or selling the stars you get?" class="input-group  mb-3">
                             <button class="btn btn-outline-info" type="button"
-                                onclick="$('#staruse').val('Fuse')">Fuse</button>
+                                onclick="$('#staruse').val('Fuse')">&#x26AD; Fuse</button>
                             <input type="text" class="form-control" id="staruse" value="Fuse">
                             <button class="btn btn-outline-info" type="button"
-                                onclick="$('#staruse').val('Sell')">Sell</button>
+                                onclick="$('#staruse').val('Sell')">&#x24; Sell</button>
                         </div>
 
                         <!-- Fast Open Game Pass Selector -->
@@ -422,7 +534,7 @@
                         <div class="input-group mb-3" data-toggle="tooltip" data-placement="top"
                             title="Are you Max opening?">
                             <div class="input-group-prepend">
-                                <label class="input-group-text  bg-info text-white" for="inputGroupSelect04">Max
+                                <label class="input-group-text  bg-info text-white" for="inputGroupSelect04">&star; Max
                                     Open</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect04">
@@ -435,7 +547,7 @@
                         <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
                             title="Enter the amount of TimeLord Passives you have">
                             <div class="input-group-prepend">
-                                <span class="input-group-text  bg-info text-white">Time Lords</span>
+                                <span class="input-group-text  bg-info text-white">&#10710; Time Lords</span>
                             </div>
                             <button class="btn btn-outline-info tlbtnmin" type="button">&minus;</button>
                             <input type="text" class="form-control" id="tlcount" value="0">
@@ -444,96 +556,33 @@
 
                         <button id="getres" type="button" class="btn btn-info btn-block">Get Result</button>
                     </div>
+                    <div class="col-7">
+                        <!-- Result Area-->
+                        <div class="card" style="min-height:175px">
+                            <div class="card-body">
+                                <h5 class="card-title">STEP 4</h5>
+                                <p class="card-text">See all the results for you</p>
+                            </div>
+                        </div>
+                        <div style="height: 10px;">&nbsp;</div>
+                        <div id="tableres" class="table-wrapper-scroll-y my-custom-scrollbar"></div>
+                    </div>
                 </div>
-                <div class="row">
-                    <!-- Bot Bar -->
 
-                    Values shown are just estimates and do not account for variations due to connection speed or<br>
-                    computer performance.<br><br>
-                </div>
-                <div class="row">
-                    <span class="small">Version 1.5 - Updated 30.05.2022</span>
-                </div>
-                <div class="row">
-                    <a href="https://github.com/dfour/afsafk">Source Code</a>
-                </div>
             </div>
-            <div class="col-2">
-                <div class="badgebar">
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test1" data-toggle="tooltip" data-placement="top"
-                            title="Do you have the VIP game pass?">
-                            <img src="https://tr.rbxcdn.com/ead398a1f02f246c28c9418273773058/150/150/Image/Png"
-                                width="75px" alt="VIP">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">VIP</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test2" data-toggle="tooltip" data-placement="top"
-                            title="Do You have the Fast Open game pass?"><img
-                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
-                                width="75px" alt="Fast Open">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">Fast Open</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test3" data-toggle="tooltip" data-placement="top"
-                            title="Have you already opened 50k stars from this world?"><img
-                                src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
-                                width="75px" alt="50k badge">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">50k</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test4" data-toggle="tooltip" data-placement="top"
-                            title="Do you own the Half Max open cooldown Game pass? "><img
-                                src="https://tr.rbxcdn.com/3a58834ce149e291a0a543e70cde2e6f/150/150/Image/Png"
-                                width="75px" alt="50k badge">
-                            <img class="clh" style="position:absolute;left: 0;top: 0;" src="images/greensorcle.png"
-                                width="75px">
-                            <div class="img-txt-centered">2x Max</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test7" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 2x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x2</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test8" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 3x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x3</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test9" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 4x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x4</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="img-txt-container badgeBut" info="test10" data-toggle="tooltip" data-placement="top"
-                            title="Is it a 5x Time Event?"><img src="images/afstimeventicon.png" width="75px">
-                            <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensorcle.png" width="75px">
-                            <div class="img-txt-centered">Event x5</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        </div>
+        <div class="row">
+            <!-- Bot Bar -->
+
+            Values shown are just estimates and do not account for variations due to connection speed or
+            computer performance.
+        </div>
+        <div class="row">
+            <span class="small">Version 1.6 - Updated 03.06.2022 - <a href="indev.html"> Dev Version</a></span>
+        </div>
+        <div class="row">
+            <a href="https://github.com/dfour/afsafk">Source Code</a>
         </div>
         <div class="row">
             <div class="col-1">&nbsp;</div>
@@ -543,7 +592,8 @@
         </div>
     </div>
 
-    <!-- Free counter code -->
+
+    <!-- Free counter code --/>
     <div id="sfc4teer55qy5fbfqsg5xeesnwjxlmwx6tl"></div>
     <script type="text/javascript"
         src="https://counter9.stat.ovh/private/counter.js?c=4teer55qy5fbfqsg5xeesnwjxlmwx6tl&down=async" async></script>
@@ -560,13 +610,11 @@
         *  Altered Style
         *  Added tooltips
         *  Added Max Open Game pass for cost and maxopen token
-        * 
-        *  
         **/
         // Control and calculate results here
 
         // hard vars
-        defaultOpenPerHour = 592   // how many opens an be done in an hour
+        defaultOpenPerHour = 592.1   // how many opens an be done in an hour
         defaultMaxOpensPerHour = 40 // how many max opens can be done in a hour
         defaultSellRate = 0.25      // value returned for sell (avg)
         timeEventMod = 1            // stores modifier for time event
@@ -574,7 +622,6 @@
         maxOpenPass = 2             // max open pass (1 for normal, 2 for own)
         modLetters = " KMBTQEZYXWVU"  // modifiers for currency
         wname = ""
-
         // useful functions
 
         function getCostOfSingleOpen(cps, opens) {
@@ -688,6 +735,26 @@
 
             $("#tableres").html(getTableResult(wname, res, mres, mod, mmod))
 
+        });
+
+
+        $(".imgsel").hover(function () {
+            wrld = $(this).data("world")
+            yen = $(this).data("yen")
+            mtokem = $(this).data("token")
+            $("#spyworld").html(wrld)
+            $("#spyyen").html(yen)
+            $("#spytoken").html(mtokem)
+        });
+
+
+        $(".imgsel").click(function () {
+            turnOffAllWorldSelectHighlights($(this))
+            wname = $(this).data("world")
+            yen = $(this).data("yen")
+            mtokem = $(this).data("token")
+            $(this).find(".clh").toggle()
+            populateCost(yen, mtokem)
         });
 
         $(".trworld").click(function () {
@@ -816,6 +883,11 @@
             $(this).find(".clh").toggle()
         });
 
+        function turnOffAllWorldSelectHighlights(object) {
+            badgebar = object.closest(".worldbar")
+            badgebar.find(".worldsel").toggle(false)
+        }
+
         function turnOffAllTimeEventHighlights(object) {
             badgebar = object.closest(".badgebar")
             badgebar.find(".timeMod").toggle(false)
@@ -825,6 +897,7 @@
         $('document').ready(function () {
             $('[data-toggle=tooltip]').tooltip();
         });
+
 
     </script>
 </body>
