@@ -105,18 +105,19 @@
         </div>
         <hr>
         <div class="row justify-content-center">
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-6 col-lg-4">
                 <!-- Left -->
                 <div class="card" style="min-height:175px">
                     <div class="card-body">
                         <h5 class="card-title">STEP 1</h5>
                         <p class="card-text">Click on a world below to set the Prices</p>
                         <div class="text-center">
-                            <h5 id="spyworld">WORLD</h5>
+                            <p class="h4"> <span id="spyworld">WORLD</span></p>
                         </div>
                         <div class="row justify-content-md-center costspy">
-                            <div class="col-4">&yen; Cost: <span id="spyyen">---</span></div>
-                            <div class="col-4">&star; Cost: <span id="spytoken">---</span></div>
+                            <div class="col-3">&yen; Cost: <span id="spyyen">---</span></div>
+                            <div class="col-3">&star; Cost: <span id="spytoken">---</span></div>
+                            <div class="col-6"><small><span id="divines">divine 1,divine 2</span></small></div>
                         </div>
                     </div>
                 </div>
@@ -124,14 +125,18 @@
                 <div>
                     <div class="text-center worldbar">
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;2E &star;5.3T" data-yen="2E" data-token="5.3T" data-world="TBC - 11/06">
-                            <img src="images/nextworld-icon.png" width="75px">
+                            title="&yen;1.98E &star;4.81T" data-dv1="&#x2a;Sensitive Slayer"
+                            data-dv2="Dragon-King &amp; Daireb" data-yen="1.98E" data-token="4.81T"
+                            data-world="Land Of Guts">
+                            <img src="https://tr.rbxcdn.com/3d7769f34b59a6c0c43c2b26632c5ba7/150/150/Image/Png"
+                                width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
 
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;780Q &star;2.24T" data-yen="780Q" data-token="2.24T"
+                            title="&yen;780Q &star;2.24T" data-dv1="Dragon-King"
+                            data-dv2="True Golden King &amp; Daireb" data-yen="780Q" data-token="2.24T"
                             data-world="Fashion Empire">
                             <img src="https://tr.rbxcdn.com/45e245fb74bb4f9086ffaa55a8e9721a/150/150/Image/Png"
                                 width="75px">
@@ -140,246 +145,244 @@
                         </div>
 
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;220Q &star;1.04T" data-yen="220Q" data-token="1.04T"
+                            title="&yen;220Q &star;1.04T" data-dv1="Dragon-King"
+                            data-dv2="True Golden King &amp; Daireb" data-yen="220Q" data-token="1.04T"
                             data-world="World Of Games">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
+                            <img src="https://tr.rbxcdn.com/0f2e2fb750ccaa895372d53480bc8c70/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;66Q &star;455B" data-yen="66Q" data-token="455B" data-world="Orca Road Prison">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
+                            title="&yen;66Q &star;455B" data-dv1="&#x2a;Dragon-King"
+                            data-dv2="True Golden King &amp; Daireb" data-yen="66Q" data-token="455B"
+                            data-world="Orca Road Prison">
+                            <img src="https://tr.rbxcdn.com/10d7c517f7075ca0b185c7e00f1b4f41/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;20Q &star;199B" data-yen="20Q" data-token="199B" data-world="Time Travel Tokyo">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
+                            title="&yen;20Q &star;199B" data-dv1="True Golden King" data-dv2="Flaming Hero &amp; Daireb"
+                            data-yen="20Q" data-token="199B" data-world="Time Travel Tokyo">
+                            <img src="https://tr.rbxcdn.com/4a8e125a2ccbd7e5d070fbc18944d9fc/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;6Q &star;86.4B" data-yen="6Q" data-token="86.4B" data-world="Ninja City">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
+                            title="&yen;6Q &star;86.4B" data-dv1="True Golden King" data-dv2="Flaming Hero &amp; Daireb"
+                            data-yen="6Q" data-token="86.4B" data-world="Ninja City">
+                            <img src="https://tr.rbxcdn.com/055924f05b61bd0a32b0ca688e0f8ad0/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;2Q &star;40.3B" data-yen="2Q" data-token="40.3B" data-world="The Hole">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
+                            title="&yen;2Q &star;40.3B" data-dv1="&#x2a;True Golden King &amp; Daireb"
+                            data-dv2="Flaming Hero &amp; Daireb" data-yen="2Q" data-token="40.3B" data-world="The Hole">
+                            <img src="https://tr.rbxcdn.com/ae70fbea93e25ffafa05026afe1ad012/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;650T &star;18.5B" data-yen="650T" data-token="18.5B" data-world="Psychic City">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
+                            title="&yen;650T &star;18.5B" data-dv1="Flaming Hero" data-dv2="Red Bat &amp; Daireb"
+                            data-yen="650T" data-token="18.5B" data-world="Psychic City">
+                            <img src="https://tr.rbxcdn.com/3ac492b63d270a00c856532655ab1e4f/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;200T &star;8.17B" data-yen="200T" data-token="8.17B"
-                            data-world="The Underworld">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
+                            title="&yen;200T &star;8.17B" data-dv1="Flaming Hero" data-dv2="Red Bat &amp; Daireb"
+                            data-yen="200T" data-token="8.17B" data-world="The Underworld">
+                            <img src="https://tr.rbxcdn.com/56818c6130a10d86219691da436dd509/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;5T &star;3.75B" data-yen="5T" data-token="3.75B" data-world="Icy Wastes">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
+                            title="&yen;5T &star;3.75B" data-dv1="&#x2a;Flaming Hero" data-dv2="Red Bat &amp; Daireb"
+                            data-yen="5T" data-token="3.75B" data-world="Icy Wastes">
+                            <img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;20T &star;1.65B" data-yen="20T" data-token="1.65B" data-world="Kingdom Of Four">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
+                            title="&yen;20T &star;1.65B" data-dv1="Red Bat" data-dv2="Engineered Alien &amp; Daireb"
+                            data-yen="20T" data-token="1.65B" data-world="Kingdom Of Four">
+                            <img src="https://tr.rbxcdn.com/95fa9f90a696c87fe419c073167bdd55/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;7T &star;800M" data-yen="7T" data-token="800M" data-world="Divine Colosseum">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
+                            title="&yen;7T &star;800M" data-dv1="Red Bat" data-dv2="Engineered Alien" data-yen="7T"
+                            data-token="800M" data-world="Divine Colosseum">
+                            <img src="https://tr.rbxcdn.com/e1dbcec32ec674b126db04b969e2d287/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;2T &star;336M" data-yen="2T" data-token="336M" data-world="Flame City">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
+                            title="&yen;2T &star;336M" data-dv1="&#x2a;Red Bat" data-dv2="Engineered Alien"
+                            data-yen="2T" data-token="336M" data-world="Flame City">
+                            <img src="https://tr.rbxcdn.com/26fb75d9712a69dcec07191e816c3bd1/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;780B &star;174M" data-yen="780B" data-token="174M" data-world="Slimey Island">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
+                            title="&yen;780B &star;174M" data-dv1="Engineered Alien" data-dv2="Hernando" data-yen="780B"
+                            data-token="174M" data-world="Slimey Island">
+                            <img src="https://tr.rbxcdn.com/4384c5c633b993d471030dd7cd582311/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;250B &star;79.5M" data-yen="250B" data-token="79.5M"
-                            data-world="Land Of Alchemy">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
+                            title="&yen;250B &star;79.5M" data-dv1="Engineered Alien" data-dv2="Hernando"
+                            data-yen="250B" data-token="79.5M" data-world="Land Of Alchemy">
+                            <img src="https://tr.rbxcdn.com/013dda1f9971b9433ce201835e6bef89/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;80B &star;36M" data-yen="80B" data-token="36M" data-world="Lucky Kingdom">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
+                            title="&yen;80B &star;36M" data-dv1="&#x2a;Engineered Alien" data-dv2="Hernando"
+                            data-yen="80B" data-token="36M" data-world="Lucky Kingdom">
+                            <img src="https://tr.rbxcdn.com/71bd5618fd1fbf84703a5854c86984d2/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;20B &star;13.8M" data-yen="20B" data-token="13.8M" data-world="Destiny Island">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
+                            title="&yen;20B &star;13.8M" data-dv1="Hernando" data-dv2="Great Ninja" data-yen="20B"
+                            data-token="13.8M" data-world="Destiny Island">
+                            <img src="https://tr.rbxcdn.com/32aae8f01170443510ead07727605b6f/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;5B &star;5.28M" data-yen="5B" data-token="5.28M" data-world="9 Crimes island">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
+                            title="&yen;5B &star;5.28M" data-dv1="Hernando" data-dv2="Great Ninja" data-yen="5B"
+                            data-token="5.28M" data-world="9 Crimes island">
+                            <img src="https://tr.rbxcdn.com/da5fcbc732c07a2f21c4cd5e70004a1a/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;1.5B &star;2.29M" data-yen="1.5B" data-token="2.29M"
-                            data-world="XYZ Metropolis">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
+                            title="&yen;1.5B &star;2.29M" data-dv1="Hernando" data-dv2="Great Ninja" data-yen="1.5B"
+                            data-token="2.29M" data-world="XYZ Metropolis">
+                            <img src="https://tr.rbxcdn.com/040a984578d6109da1a9acd67e4e424d/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;500M &star;1.07M" data-yen="500M" data-token="1.07M" data-world="Cursed High">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
+                            title="&yen;500M &star;1.07M" data-dv1="Hernando" data-dv2="Great Ninja" data-yen="500M"
+                            data-token="1.07M" data-world="Cursed High">
+                            <img src="https://tr.rbxcdn.com/214692f1e31ad36f515baa9da81b2f04/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;150M &star;464K" data-yen="150M" data-token="464K" data-world="Empty Dimension">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
+                            title="&yen;150M &star;464K" data-dv1="&#x2a;Hernando" data-dv2="Great Ninja"
+                            data-yen="150M" data-token="464K" data-world="Empty Dimension">
+                            <img src="https://tr.rbxcdn.com/7a9a96d07615282e2bc34ababe80eb29/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;40M &star;185K" data-yen="40M" data-token="185K" data-world="Virtual Castle">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
+                            title="&yen;40M &star;185K" data-dv1="Great Ninja" data-dv2="Vegetable" data-yen="40M"
+                            data-token="185K" data-world="Virtual Castle">
+                            <img src="https://tr.rbxcdn.com/fabecb3e963f8efaa14efd9d515ee12a/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;10M &star;71.1K" data-yen="10M" data-token="71.1K" data-world="Chimera Jungle">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
+                            title="&yen;10M &star;71.1K" data-dv1="Great Ninja" data-dv2="Vegetable" data-yen="10M"
+                            data-token="71.1K" data-world="Chimera Jungle">
+                            <img src="https://tr.rbxcdn.com/9c38d441e6c9ccf4dbc3784c026d7ce5/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;3M &star;30.8K" data-yen="3M" data-token="30.8K" data-world="Ghoul Town">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
+                            title="&yen;3M &star;30.8K" data-dv1="Great Ninja" data-dv2="Vegetable" data-yen="3M"
+                            data-token="30.8K" data-world="Ghoul Town">
+                            <img src="https://tr.rbxcdn.com/e509880fb5d2712bb7afff34db49757a/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;800K &star;12.3K" data-yen="800K" data-token="12.3K" data-world="Slayer Army">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
+                            title="&yen;800K &star;12.3K" data-dv1="Great Ninja" data-dv2="Vegetable" data-yen="800K"
+                            data-token="12.3K" data-world="Slayer Army">
+                            <img src="https://tr.rbxcdn.com/119c3b15816cebaf4be1a819647672e6/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;250K &star;5.51K" data-yen="250K" data-token="5.51K" data-world="Walled City">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
+                            title="&yen;250K &star;5.51K" data-dv1="&#x2a;Great Ninja" data-dv2="Vegetable"
+                            data-yen="250K" data-token="5.51K" data-world="Walled City">
+                            <img src="https://tr.rbxcdn.com/870db5469eccce6323b0fb22a7f1d1ef/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;50K &star;1.8K" data-yen="50K" data-token="1.8K" data-world="Hero University">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
+                            title="&yen;50K &star;1.8K" data-dv1="Vegetable" data-dv2="None" data-yen="50K"
+                            data-token="1.8K" data-world="Hero University">
+                            <img src="https://tr.rbxcdn.com/1aa4fed60c225ba95d2b50b1db47f34c/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;10K &star;593" data-yen="10K" data-token="593" data-world="Fruits Island">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
+                            title="&yen;10K &star;593" data-dv1="Vegetable" data-dv2="None" data-yen="10K"
+                            data-token="593" data-world="Fruits Island">
+                            <img src="https://tr.rbxcdn.com/e43597c02ff9af75fdd57733768787dc/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;2.5K &star;227" data-yen="2.5K" data-token="227" data-world="Crazy Town">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
+                            title="&yen;2.5K &star;227" data-dv1="Vegetable" data-dv2="None" data-yen="2.5K"
+                            data-token="227" data-world="Crazy Town">
+                            <img src="https://tr.rbxcdn.com/b13b29bad076b4d2186799b8b23dd9bc/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;300 &star;53" data-yen="300" data-token="53" data-world="Ninja Village">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/2c915090a107336152de93967f74bff4/150/150/Image/Png"
+                            title="&yen;300 &star;53" data-dv1="Vegetable" data-dv2="None" data-yen="300"
+                            data-token="53" data-world="Ninja Village">
+                            <img src="https://tr.rbxcdn.com/2c915090a107336152de93967f74bff4/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;80 &star;21" data-yen="80" data-token="21" data-world="Super Island">
-                            <img class="imgsel"
-                                src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
+                            title="&yen;80 &star;21" data-dv1="&#x2a;Vegetable" data-dv2="None" data-yen="80"
+                            data-token="21" data-world="Super Island">
+                            <img src="https://tr.rbxcdn.com/591d22418690d4c762afb8bbc1c116dd/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
                                 src="images/greensorcle.png" width="75px">
                         </div>
                     </div>
                 </div>
-
+                <div style="height: 10px;">&nbsp;</div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-12 col-md-6 col-lg-2">
 
                 <!-- Badge Row-->
                 <div class="card" style="min-height:175px">
@@ -407,8 +410,6 @@
                                 width="75px">
                             <div class="img-txt-centered">Fast Open</div>
                         </div>
-                    </div>
-                    <div class="row justify-content-center">
                         <div class="img-txt-container badgeBut" info="test3" data-toggle="tooltip" data-placement="top"
                             title="Have you already opened 50k stars from this world?"><img
                                 src="https://tr.rbxcdn.com/34b8d7ff33e2aa812f46b0822a5b955b/150/150/Image/Png"
@@ -439,8 +440,6 @@
                                 src="images/greensorcle.png" width="75px">
                             <div class="img-txt-centered">Event x3</div>
                         </div>
-                    </div>
-                    <div class="row justify-content-center">
                         <div class="img-txt-container badgeBut" info="test9" data-toggle="tooltip" data-placement="top"
                             title="Is it a 4x Time Event?"><img src="images/afstimeventicon.png" width="75px">
                             <img class="clh timeMod" style="position:absolute;left: 0;top: 0; display: none;"
@@ -455,8 +454,9 @@
                         </div>
                     </div>
                 </div>
+                <div style="height: 10px;">&nbsp;</div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-12 col-md-12 col-lg-6">
                 <!-- Main Area -->
                 <div class="row">
                     <!-- Top Bar -->
@@ -607,32 +607,41 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <!-- Bot Bar -->
-
-            Values shown are just estimates and do not account for variations due to connection speed or
-            computer performance.
-        </div>
-        <div class="row">
-            <span class="small">Version 1.6.2 - Updated 09.06.2022 - <a href="indev.html"> Dev Version</a></span>
-        </div>
-        <div class="row">
-            <a href="https://github.com/dfour/afsafk">Source Code</a>
-        </div>
-        <div class="row">
-            <div class="col-1">&nbsp;</div>
-        </div>
-        <div class="row">
-            &there4; &nbsp; &sup;_&fnof;&deg;&micro;&and;
+            <div class="col-12">Values shown are just estimates and do not account for variations due to connection
+                speed or computer
+                performance.</div>
+            <div class="col-12">Special thanks to <a href="https://www.twitch.tv/omkabo">@OmKaBo</a> for suggestions and
+                feedback.
+            </div>
+            <div class="col-12">
+                <span class="small">Version 1.6.5 - Updated 11.06.2022 - <a href="indev.html"> Dev Version</a></span>
+            </div>
+            <div class="col-12"><a href="https://github.com/dfour/afsafk">Source Code</a></div>
+            <div class="col-12">
+                <!-- Google add start /////////////////////////////////////////////////////////////////////-->
+                <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8369848598369296"
+                    crossorigin="anonymous"></script>
+                <!-- afscalc -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8369848598369296"
+                    data-ad-slot="4772092090" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- Google add end ///////////////////////////////////////////////////////////////////////-->
+            </div>
+            <div class="col-12">&there4; &nbsp; &sup;_&fnof;&deg;&micro;&and;</div>
         </div>
     </div>
 
     <script>
         /** 
-      * v1.6.1
-        *  mobile style fix
-        *  9 crime token val fix
-        *  js undefined bugfix
+      * v1.6.4
+        *  mobile style fix (with multi size display settings)
+        *  footer update
+        *  default world values to stop hieght change when choosing world
         **/
         // Control and calculate results here
 
@@ -644,7 +653,11 @@
         timeLordsMod = 0            // for time lord multiplier
         maxOpenPass = 2             // max open pass (1 for normal, 2 for own)
         modLetters = " KMBTQEZYXWVU"  // modifiers for currency
-        wname = ""
+        wname = "Pick A world!"
+        yen = "0"
+        mtoken = "0"
+        dv1 = ""
+        dv2 = ""
         // useful functions
 
         // get the cost of a single open
@@ -762,6 +775,13 @@
             return mot
         }
 
+        function setDivines(d1, d2) {
+            if ((d1 === undefined) || (d2 === undefined)) {
+                return
+            }
+            $("#divines").html(d1 + " &amp; " + d2)
+        }
+
         // respond to Clicks
         $("#getres").click(function (e) {
             cost = $("#inpcost").val()
@@ -792,13 +812,24 @@
         });
 
 
+
         $(".imgsel").hover(function () {
-            wrld = $(this).data("world")
-            yen = $(this).data("yen")
-            mtokem = $(this).data("token")
-            $("#spyworld").html(wrld)
+            twrld = $(this).data("world")
+            tyen = $(this).data("yen")
+            tmtokem = $(this).data("token")
+            tdv1 = $(this).data("dv1")
+            tdv2 = $(this).data("dv2")
+            setDivines(tdv1, tdv2)
+            $("#spyworld").html(twrld)
+            $("#spyyen").html(tyen)
+            $("#spytoken").html(tmtokem)
+        });
+
+        $(".imgsel").mouseleave(function () {
+            $("#spyworld").html(wname)
             $("#spyyen").html(yen)
-            $("#spytoken").html(mtokem)
+            $("#spytoken").html(mtoken)
+            setDivines(dv1, dv2)
         });
 
 
@@ -806,9 +837,12 @@
             turnOffAllWorldSelectHighlights($(this))
             wname = $(this).data("world")
             yen = $(this).data("yen")
-            mtokem = $(this).data("token")
+            mtoken = $(this).data("token")
+            dv1 = $(this).data("dv1")
+            dv2 = $(this).data("dv2")
+            setDivines(dv1, dv2)
             $(this).find(".clh").toggle()
-            populateCost(yen, mtokem)
+            populateCost(yen, mtoken)
         });
 
         $(".trworld").click(function () {

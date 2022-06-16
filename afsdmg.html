@@ -6,8 +6,15 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/afsutils.js"></script>
 
     <style>
+        img {
+            /** /
+            opacity: 0.03;
+            /* hide all images for testing */
+        }
+
         .my-custom-scrollbar {
             position: relative;
             height: 600px;
@@ -38,6 +45,23 @@
         body {
             color: #dff3ff;
             background-color: #525252;
+        }
+
+        .fgtimg {
+            width: 85px;
+        }
+
+        .fgtimghl {
+            width: 85px;
+        }
+
+        /* Passive image and highlights*/
+        .passimg {
+            width: 50px;
+        }
+
+        .passhl {
+            width: 50px;
         }
 
 
@@ -105,404 +129,566 @@
         </div>
         <hr>
         <div class="row justify-content-center">
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <!-- Input area-->
-                <div class="card" style="min-height:175px">
-                    <div class="card-body">
-                        <h5 class="card-title">Fighter</h5>
-                        <p class="card-text">Choose a Fighter to get Damage</p>
-                        <div class="text-center">
-                            <h5 id="spyfighter">Name</h5>
+                <div id="autoarea">
+                    <div class="card" style="min-height:175px">
+                        <div class="card-body">
+                            <h5 class="card-title">Select Unit</h5>
+                            <button class="btn btn-info btn-sm toggleManual"
+                                style="position:absolute; top:20px; right:20px;">Options & Talents</button>
+                            <p class="card-text"><small> *If your fighter is not shown you can set the base damage in
+                                    the options section</small></p>
+                            <div class="text-center">
+                                <h5 id="spyfighter">Name</h5>
+                            </div>
+                            <div class="row justify-content-md-center costspy">
+                                <div class="col-6">Base Damage: <span id="spyfdmg">---</span></div>
+                                <div class="col-6">Shiny Damage: <span id="spyfsdmg">---</span></div>
+                            </div>
                         </div>
-                        <div class="row justify-content-md-center costspy">
-                            <div class="col-4">Base Damage: <span id="spyfdmg">---</span></div>
-                            <div class="col-4">Shiny Damage: <span id="spyfsdmg">---</span></div>
+                    </div>
+
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div>
+                        <div class="text-center fighterbar">
+                            <!-- Dai-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="950" data-dmg="950" data-dmgs="1600" data-fighter="Daireb">
+                                <img class="fgtimg" src="images/dai.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- gyomei-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="950" data-dmg="950" data-dmgs="1600" data-fighter="Sensative Slayer">
+                                <img class="fgtimg" src="images/senslay.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- kaido -->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="820" data-dmg="820" data-dmgs="1400" data-fighter="Dragon-King">
+                                <img class="fgtimg" src="images/kaido.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- gilly-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="700" data-dmg="700" data-dmgs="1200" data-fighter="True Golden King">
+                                <img class="fgtimg" src="images/gilly.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- endev-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="600" data-dmg="600" data-dmgs="1000" data-fighter="Flaming Hero">
+                                <img class="fgtimg" src="images/end.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- padoru -->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="530" data-dmg="530" data-dmgs="930" data-fighter="Holiday Baby">
+                                <img class="fgtimg" src="images/pad.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- redbat -->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="520" data-dmg="520" data-dmgs="900" data-fighter="Red Bat">
+                                <img class="fgtimg" src="images/fem.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- mew2-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="440" data-dmg="440" data-dmgs="770" data-fighter="Engineered Alien">
+                                <img class="fgtimg" src="images/mew2.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- pucci-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="340" data-dmg="340" data-dmgs="600" data-fighter="Hernando">
+                                <img class="fgtimg" src="images/herny.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- madara-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="260" data-dmg="260" data-dmgs="460" data-fighter="Great Ninja">
+                                <img class="fgtimg" src="images/mad.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- vegito -->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="1" data-dmg="200" data-dmgs="360" data-fighter="Vegtable -(need data)">
+                                <img class="fgtimg" src="images/vegan.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- /////////////////////////////////  SECRETS  ///////////////////////////////////-->
+                            <!-- Skele-king-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="542" data-dmg="540" data-dmgs="940" data-fighter="Skele-King">
+                                <img class="fgtimg" src="images/skele.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- father kill-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="510" data-dmg="510" data-dmgs="900" data-fighter="Father Killer">
+                                <img class="fgtimg" src="images/fatkill.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- yuka shadow-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="510" data-dmg="490" data-dmgs="860" data-fighter="Yuka (Shadow)">
+                                <img class="fgtimg" src="images/yukas.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <!-- Jimmy-->
+                            <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
+                                title="460" data-dmg="460" data-dmgs="810" data-fighter="Jimmy">
+                                <img class="fgtimg" src="images/jimmy.png">
+                                <img class="clh worldsel fgtimghl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
-
-                <div style="height: 10px;">&nbsp;</div>
-                <div>
-                    <div class="text-center fighterbar">
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="820"
-                            data-dmg="820" data-dmgs="1400" data-fighter="Dragon-King">
-                            <img src="images/kaido.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                <div id="manualarea" style="display: none;">
+                    <div class="card" style="min-height:175px">
+                        <div class="card-body">
+                            <h5 class="card-title">Manual Values</h5>
+                            <button class="btn btn-info btn-sm toggleAuto"
+                                style="position:absolute; top:20px; right:20px;">View Units</button>
+                            <p class="card-text">Set the values manually for fighters not shown</p>
                         </div>
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="700"
-                            data-dmg="700" data-dmgs="1200" data-fighter="True Golden King">
-                            <img src="images/gilly.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div>
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="The non shiny damage for the unit">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-info text-white" style="width: 175px;">Unit Base
+                                    Damage</span>
+                            </div>
+                            <button class="btn btn-outline-info dmgbtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="inpdmg" value="590">
+                            <button class="btn btn-outline-info dmgbtnplus" type="button">&plus;</button>
                         </div>
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="4"
-                            data-dmg="4" data-dmgs="4" data-fighter="Flaming Hero - (need data)">
-                            <img src="images/end.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
-                        </div>
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="530"
-                            data-dmg="530" data-dmgs="930" data-fighter="Holiday Baby">
-                            <img src="images/pad.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
-                        </div>
-
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="3"
-                            data-dmg="3" data-dmgs="3" data-fighter="Femto - (need data)">
-                            <img src="images/fem.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                        <!-- Shiney or no-->
+                        <div data-toggle="tooltip" data-placement="top" title="Shiny or not" class="input-group  mb-3">
+                            <button class="btn btn-outline-info" type="button"
+                                onclick="$('#shinystate').val('Normal');//getDMG()">Normal</button>
+                            <input type="text" class="form-control" id="shinystate" value="Shiny">
+                            <button class="btn btn-outline-info" type="button"
+                                onclick="$('#shinystate').val('Shiny');//getDMG()">Shiny</button>
                         </div>
 
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="440"
-                            data-dmg="440" data-dmgs="770" data-fighter="Engineered Alien">
-                            <img src="images/mew2.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                        <!-- Level -->
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="The level you want to check the value for.">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white" style="width: 175px;">Level</span>
+                            </div>
+                            <button class="btn btn-outline-info lvlbtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="inplevel" value="325">
+                            <button class="btn btn-outline-info lvlbtnplus" type="button">&plus;</button>
                         </div>
 
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="340"
-                            data-dmg="340" data-dmgs="600" data-fighter="Hernando">
-                            <img src="images/herny.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                        <!-- Base Damage Talent-->
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Base Damage Talent. Limitless cap 20, non limitless cap 10!">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white" style="width: 175px;">Damage</span>
+                            </div>
+                            <button class="btn btn-outline-info dmgtalbtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="inpdmgtalent" value="20">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="dmgtalmod">90%</span>
+                            </div>
+                            <button class="btn btn-outline-info dmgtalbtnplus" type="button">&plus;</button>
                         </div>
 
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="2"
-                            data-dmg="2" data-dmgs="2" data-fighter="Great Ninja -(need data)">
-                            <img src="images/mad.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                        <!-- Base Ult Damage --/>
+                    <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                        title="Ultimate Damage Talent. Limitless cap 20, non limitless cap 10!">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text  bg-info text-white" style="width: 175px;">Ult Dmg</span>
                         </div>
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="1"
-                            data-dmg="1" data-dmgs="1" data-fighter="Vegtable -(need data)">
-                            <img src="images/vegan.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                        <button class="btn btn-outline-info ulttalbtnmin" type="button">&minus;</button>
+                        <input type="text" class="form-control" id="inpulttalent" value="20">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="ulttalmod">90%</span>
                         </div>
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="510"
-                            data-dmg="510" data-dmgs="900" data-fighter="Father Killer">
-                            <img src="images/fatkill.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
+                        <button class="btn btn-outline-info ulttalbtnplus" type="button">&plus;</button>
+                    </div>
+                    <!-- Base Attack Speed -->
+                        <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
+                            title="Attack Speed Talent. Limitless cap 20, non limitless cap 10!">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  bg-info text-white" style="width: 175px;">Attack
+                                    Speed</span>
+                            </div>
+                            <button class="btn btn-outline-info spdtalbtnmin" type="button">&minus;</button>
+                            <input type="text" class="form-control" id="inpspdtalent" value="20">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="spdtalmod">90%</span>
+                            </div>
+                            <button class="btn btn-outline-info spdtalbtnplus" type="button">&plus;</button>
                         </div>
-
-                        <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top" title="510"
-                            data-dmg="490" data-dmgs="860" data-fighter="Yuka (Shadow)">
-                            <img src="images/yukas.png" width="128px">
-                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                src="images/greensqur.png" width="128px">
-                        </div>
-
 
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-6 col-lg-3">
                 <!-- Passive Area -->
                 <div class="card" style="min-height:175px">
                     <div class="card-body">
                         <h5 class="card-title">Passives</h5>
-                        <p class="card-text">Choose Passives</p>
                         <div class="text-center">
-                            <h5 id="spypass1">Passive</h5>
-                        </div>
-                        <div class="row justify-content-md-center costspy">
-
-                            <div class="col-3">Dmg : <span id="spypassdmg1">---</span></div>
-                            <div class="col-3">Boss Dmg: <span id="spypassdmgs1">---</span></div>
-
-                            <div class="col-3">Dmg: <span id="spypassdmg2">---</span></div>
-                            <div class="col-3">Boss Dmg: <span id="spypassdmgs2">---</span></div>
-
+                            <div class="row justify-content-md-center costspy">
+                                <div class="col-6">
+                                    <div><span id="spypass1">Passive 1</span></div>
+                                    <div><small>Dmg : <span id="spypassdmg1">---</span></small></div>
+                                    <div><small>Boss Dmg: <span id="spypassdmgs1">---</span></small></div>
+                                    <div><small>Speed: <span id="spypassspd1">---</span></small></div>
+                                </div>
+                                <div class="col-6">
+                                    <div><span id="spypass2">Passive 2</span></div>
+                                    <div><small>Dmg: <span id="spypassdmg2">---</span></small></div>
+                                    <div><small>Boss Dmg: <span id="spypassdmgs2">---</span></small></div>
+                                    <div><small>Speed: <span id="spypassspd2">---</span></small></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div style="height: 10px;">&nbsp;</div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-6">
                         <div class="text-center pass1bar">
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="No Passive" data-dmg="1" data-dmgs="1" data-passname="No Passive"
+                                title="No Passive" data-dmg="1" data-dmgs="1" data-spd="1" data-passname="No Passive"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/nopass.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/nopass.png">
+                                <img class="clh worldsel passhl" style="position:absolute;left: 0;top: 0;"
+                                    src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Monster" data-dmg="3" data-dmgs="3" data-passname="Monster"
+                                title="Monster" data-dmg="2.8" data-dmgs="2.8" data-spd="1.5" data-passname="Monster"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/monster.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/monster.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="God" data-dmg="2" data-dmgs="2" data-passname="God" style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/god.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                title="God" data-dmg="2" data-dmgs="2" data-spd="2" data-passname="God"
+                                style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/god.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Blessing" data-dmg="1.75" data-dmgs="1.75" data-passname="Blessing"
+                                title="Time Lord" data-dmg="1.25" data-dmgs="1.25" data-spd="3"
+                                data-passname="Time Lord" style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/nopass.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
+                                title="Blessing" data-dmg="1.75" data-dmgs="1.75" data-spd="1" data-passname="Blessing"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/bless.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/bless.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
 
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Ghostly" data-dmg="1.5" data-dmgs="1.5" data-passname="Ghostly"
+                                title="Ghostly" data-dmg="1.5" data-dmgs="1.5" data-spd="1.5" data-passname="Ghostly"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/ghost.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/ghost.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Solid Gold" data-dmg="1.75" data-dmgs="1.75" data-passname="Solid Gold"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/solid.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                title="Solid Gold" data-dmg="1.75" data-dmgs="1.75" data-spd="0.8"
+                                data-passname="Solid Gold" style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/solid.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Sorcerer 3" data-dmg="1.2" data-dmgs="1.2" data-passname="Sorcerer 3"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/hp3.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                title="Sorcerer 3" data-dmg="1.2" data-dmgs="1.2" data-spd="1"
+                                data-passname="Sorcerer 3" style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/hp3.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Giant" data-dmg="1.65" data-dmgs="1.65" data-passname="Giant"
+                                title="Giant" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Giant"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/giant.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/giant.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tank" data-dmg="1.65" data-dmgs="1.65" data-passname="Tank"
+                                title="Tank" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Tank"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tank.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tank.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 3" data-dmg="1" data-dmgs="2" data-passname="Tactical 3"
+                                title="Tactical 3" data-dmg="1" data-dmgs="2" data-spd="1" data-passname="Tactical 3"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tac3.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tac3.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tiny" data-dmg="1.2" data-dmgs="1.2" data-passname="Tiny"
+                                title="Tiny" data-dmg="1.2" data-dmgs="1.2" data-spd="1.5" data-passname="Tiny"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tiny.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tiny.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 2" data-dmg="1" data-dmgs="1.5" data-passname="Tactical 2"
+                                title="Tactical 2" data-dmg="1" data-dmgs="1.5" data-spd="1" data-passname="Tactical 2"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tac2.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tac2.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Strong 3" data-dmg="1.5" data-dmgs="1.5" data-passname="Strong 3"
+                                title="Strong 3" data-dmg="1.5" data-dmgs="1.5" data-spd="1" data-passname="Strong 3"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/strong3.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/strong3.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Strong 2" data-dmg="1.25" data-dmgs="1.25" data-passname="Strong 2"
+                                title="Strong 2" data-dmg="1.25" data-dmgs="1.25" data-spd="1" data-passname="Strong 2"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/strong2.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/strong2.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-6">
                         <div class="text-center pass2bar">
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="No Passive" data-dmg="1" data-dmgs="1" data-passname="No Passive"
+                                title="No Passive" data-dmg="1" data-dmgs="1" data-spd="1" data-passname="No Passive"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/nopass.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/nopass.png">
+                                <img class="clh worldsel passhl" style="position:absolute;left: 0;top: 0;"
+                                    src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Monster" data-dmg="3" data-dmgs="3" data-passname="Monster"
+                                title="Monster" data-dmg="2.8" data-dmgs="2.8" data-spd="1.5" data-passname="Monster"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/monster.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/monster.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="God" data-dmg="2" data-dmgs="2" data-passname="God" style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/god.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                title="God" data-dmg="2" data-dmgs="2" data-spd="2" data-passname="God"
+                                style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/god.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Blessing" data-dmg="1.75" data-dmgs="1.75" data-passname="Blessing"
+                                title="Time Lord" data-dmg="1.25" data-dmgs="1.25" data-spd="3"
+                                data-passname="Time Lord" style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/nopass.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            </div>
+                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
+                                title="Blessing" data-dmg="1.75" data-dmgs="1.75" data-spd="1" data-passname="Blessing"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/bless.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/bless.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
 
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Ghostly" data-dmg="1.5" data-dmgs="1.5" data-passname="Ghostly"
+                                title="Ghostly" data-dmg="1.5" data-dmgs="1.5" data-spd="1.5" data-passname="Ghostly"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/ghost.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/ghost.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Solid Gold" data-dmg="1.75" data-dmgs="1.75" data-passname="Solid Gold"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/solid.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                title="Solid Gold" data-dmg="1.75" data-dmgs="1.75" data-spd="0.8"
+                                data-passname="Solid Gold" style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/solid.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Sorcerer 3" data-dmg="1.2" data-dmgs="1.2" data-passname="Sorcerer 3"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/hp3.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                title="Sorcerer 3" data-dmg="1.2" data-dmgs="1.2" data-spd="1"
+                                data-passname="Sorcerer 3" style="margin-bottom: 5px;">
+                                <img class="rounded passimg" src="images/hp3.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Giant" data-dmg="1.65" data-dmgs="1.65" data-passname="Giant"
+                                title="Giant" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Giant"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/giant.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/giant.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tank" data-dmg="1.65" data-dmgs="1.65" data-passname="Tank"
+                                title="Tank" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Tank"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tank.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tank.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 3" data-dmg="1" data-dmgs="2" data-passname="Tactical 3"
+                                title="Tactical 3" data-dmg="1" data-dmgs="2" data-spd="1" data-passname="Tactical 3"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tac3.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tac3.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tiny" data-dmg="1.2" data-dmgs="1.2" data-passname="Tiny"
+                                title="Tiny" data-dmg="1.2" data-dmgs="1.2" data-spd="1.5" data-passname="Tiny"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tiny.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tiny.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 2" data-dmg="1" data-dmgs="1.5" data-passname="Tactical 2"
+                                title="Tactical 2" data-dmg="1" data-dmgs="1.5" data-spd="1" data-passname="Tactical 2"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/tac2.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/tac2.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Strong 3" data-dmg="1.5" data-dmgs="1.5" data-passname="Strong 3"
+                                title="Strong 3" data-dmg="1.5" data-dmgs="1.5" data-spd="1" data-passname="Strong 3"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/strong3.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/strong3.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                             <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Strong 2" data-dmg="1.25" data-dmgs="1.25" data-passname="Strong 2"
+                                title="Strong 2" data-dmg="1.25" data-dmgs="1.25" data-spd="1" data-passname="Strong 2"
                                 style="margin-bottom: 5px;">
-                                <img class="rounded" src="images/strong2.png" width="75px">
-                                <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
-                                    src="images/greensqur.png" width="75px">
+                                <img class="rounded passimg" src="images/strong2.png">
+                                <img class="clh worldsel passhl"
+                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
 
 
-            <div class="col-sm-4">
+            <div class="col-sm-12 col-md-4 col-lg-2">
                 <!-- Result Area -->
-                <div class="card" style="min-height:175px">
-                    <div class="card-body">
-                        <h5 class="card-title">Level</h5>
-                        <p class="card-text">Choose the level to view</p>
+                <div id="singleResults">
+                    <div class="card" style="min-height:175px">
+                        <div class="card-body">
+                            <h5 class="card-title">Results</h5>
+                            <p class="card-text">Single Unit Results</p>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <th>Results</th>
+                                <td><button class="btn btn-info btn-sm" id="addToTeam">Add to Team</button></td>
+                            </tr>
+                            <tr style="display: none;">
+                                <th>Unit Name</th>
+                                <td id="tbuname">Custom</td>
+                            </tr>
+                            <tr style="display: none;">
+                                <th>Passive 1</th>
+                                <td id="tbpass1">None</td>
+                            </tr>
+                            <tr style="display: none;">
+                                <th>Passive 2</th>
+                                <td id="tbpass2">None</td>
+                            </tr>
+                            <tr>
+                                <th>Damage vs Normal</th>
+                                <td id="tbdmg">0</td>
+                            </tr>
+                            <tr>
+                                <th>Damage Vs Boss</th>
+                                <td id="tbdmgs">0</td>
+                            </tr>
+                            <tr>
+                                <th>Damage Per Minute</th>
+                                <td id="tbdmgpm">0</td>
+                            </tr>
+                            <tr>
+                                <th>Boss Damage Per Minute</th>
+                                <td id="tbdmgpmb">0</td>
+                            </tr>
+                        </table>
+
                     </div>
                 </div>
-                <div style="height: 10px;">&nbsp;</div>
-
-                <!-- Shiney or no-->
-                <!-- Fuse or Sell Selector -->
-                <div data-toggle="tooltip" data-placement="top" title="Shiny or not" class="input-group  mb-3">
-                    <button class="btn btn-outline-info" type="button"
-                        onclick="$('#shinystate').val('Normal');//getDamageWithPassives()">Normal</button>
-                    <input type="text" class="form-control" id="shinystate" value="Shiny">
-                    <button class="btn btn-outline-info" type="button"
-                        onclick="$('#shinystate').val('Shiny');//getDamageWithPassives()">Shiny</button>
-                </div>
-
-                <!-- Level -->
-                <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
-                    title="The level you want to check the value for.">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text  bg-info text-white" style="width: 175px;">Level</span>
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-4">
+                <div id="multiResults">
+                    <div class="card" style="min-height:175px">
+                        <div class="card-body">
+                            <h5 class="card-title">Team Results</h5>
+                            <p class="card-text">View Results</p>
+                        </div>
                     </div>
-                    <button class="btn btn-outline-info lvlbtnmin" type="button">&minus;</button>
-                    <input type="text" class="form-control" id="inplevel" value="315">
-                    <button class="btn btn-outline-info lvlbtnplus" type="button">&plus;</button>
-                </div>
-
-                <!-- Base Damage Talent-->
-                <div class="input-group  mb-3" data-toggle="tooltip" data-placement="top"
-                    title="Base Damage Talent. Limitless cap 20, non limitless cap 10!">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text  bg-info text-white" style="width: 175px;">Base Damage
-                            Talent</span>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div id="teamResTable">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Unit</th>
+                                    <th>P1</th>
+                                    <th>P2</th>
+                                    <th>DMG</th>
+                                    <th>BDMG</th>
+                                    <th>DPM</th>
+                                    <th>BDPM</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" align="right">Total</td>
+                                    <td>0 </td>
+                                    <td>0 </td>
+                                    <td>0 </td>
+                                    <td>0 </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <button class="btn btn-outline-info talbtnmin" type="button">&minus;</button>
-                    <input type="text" class="form-control" id="inptalent" value="20">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="talmod">90%</span>
-                    </div>
-                    <button class="btn btn-outline-info talbtnplus" type="button">&plus;</button>
-                </div>
-
-
-
-                <div>
-                    <h2 id="resultArea">Results shown here</h2>
-                    <h2 id="resultArea2">Results shown here</h2>
                 </div>
             </div>
 
         </div>
         <div class="row">
             <!-- Bot Bar -->
-
             Values shown are just estimates as damage shown in AFS is a rounded value.
         </div>
         <div class="row">
-            <span class="small">Version 0.1 (Beta) - Updated 09.06.2022 </span>
+            <span class="small">Version 0.1 (Beta) - Updated 15.06.2022 </span>
         </div>
         <div class="row">
             <a href="https://github.com/dfour/afsafk">Source Code</a>
@@ -517,130 +703,69 @@
 
     <script>
         /** 
-        *  v0.1
-        *  initial testing, style etc
+        * v0.1
+        * initial testing, style etc
+        * To add:
+        * Ace (2.4x), draconic(1.5xd 0.8xspd), tac1, leader1+2+3(partydmg+) 
+        * sorc 1+2+3 (1,1.1X, 1.2x)
+        * speedy (1.3xspd)
+        * yeti(2xdmg,0.7xspd)
+        * blizz(1.5dmg,2xspd)
+        * gen(1.2xdmg)
+        * xmastac(1.65xdmgs)
         **/
         // Control and calculate results here
 
-        // hard vars
-        dmgMulPerLvl = 1.11611 // based off testing in excel (yes, I still use excel)
-        talentMulti = 1.9; // default value of max talents
+        // Vars
+        bdm = 1.9;  // Base Damage Multiplier default value of att dmg talent
+        bsm = 1     // Base Speed Multiplierdefault value of att spd talent
+        team = []   // store th eteam info for full party dmg
 
-
-        function getDmgForLevel(baseDMG, level, shiny) {
-
-            if (shiny) {
-                baseDMG *= 1.75
-            }
-
-            powlvl = Math.pow(dmgMulPerLvl, (level - 1))
-            return powlvl * baseDMG
-        }
-
-        // stats 10 = + 30% ||| 20 = + 90%
-        /**
-         * 1 = -24%
-         * 2 = -18%
-         * -12
-         * -6
-         * 0
-         * 6
-         * 12
-         * 18
-         * 24
-         * 30
-         *
-         *
-         *
-         **/
-
-
-        defaultOpenPerHour = 592.1   // how many opens an be done in an hour
-        defaultMaxOpensPerHour = 40 // how many max opens can be done in a hour
-        defaultSellRate = 0.25      // value returned for sell (avg)
-        timeEventMod = 1            // stores modifier for time event
-        timeLordsMod = 0            // for time lord multiplier
-        maxOpenPass = 2             // max open pass (1 for normal, 2 for own)
-        modLetters = " KMBTQEZYXWVU"  // modifiers for currency
-        wname = ""
-        // useful functions
-
-
-
-        // convert cost to 3 digit value and set modifier
-        function convertToFormatted(value, mod) {
-            cmodpos = modLetters.indexOf(mod.toUpperCase())
-            while (Math.ceil(Math.log10(value + 1)) > 3) {
-                cmodpos += 1 // move to next modifier
-                value = value * 0.001// divide val by 1000 to mve 3 places down
-            }
-
-            return parseFloat(value.toFixed(2)) + modLetters[cmodpos]
-            //return value.toPrecision(3) + modLetters[cmodpos];
-        }
-
-
-        // respond to Clicks
+        // respond to Clicks anywhere in the body
         $("body").click(function (e) {
-            //cost = $("#inpcost").val()
-            //mod = $("#inpmod").val()
-            //mcost = $("#inpMaxcost").val()
-            //mmod = $("#maxmod").val()
-            //openCount = parseInt($("#stoCount").val())
-            //invSpace = $("#invSpace").val()
-            //fuseSell = $("#staruse").val() == "Fuse" ? 1 : 2  // 1 = fuse | 2 = Sell
-            //gPass = $("#inputGroupSelect02").val()      // 1 = None | 2 = Owned
-            //fiftyk = $("#inputGroupSelect03").val()     // 1 = None | 2 = Owned
-            //doMax = $("#inputGroupSelect04").val()      // 1 = Yes  | 2 = No
-            //vip = $("#inputGroupSelect05").val()        // 1 = No   | 2 = Yes
-            //timeLordsMod = parseInt($("#tlcount").val()) * 0.25
-
-            //res = getCostOfHourOpens(cost, openCount, gPass, fiftyk, fuseSell, vip)
-            //totOpens = getHourOpens(openCount, gPass, fiftyk)
-            //mres = 0
-            //if (doMax == 1) {
-            //    res += getCostOfHourMaxOpen(cost, invSpace, fuseSell)
-            //    totOpens += getHourMaxOpen(invSpace)
-            //    mres = getOneHourMaxToken(mcost)
-            //}
-
-
-            //$("#tableres").html(getTableResult(wname, res, mres, mod, mmod, totOpens))
-
-            getDamageWithPassives()
-
+            getDMG()
         });
 
-
-        function getDamageWithPassives() {
+        function getDMG() {
             reslvl = $("#inplevel").val()
-            shinystate = $("#shinystate").val() == "Shiny"
-            plainDamage = getDmgForLevel(clickedDmg, reslvl, shinystate)
+            isShiny = $("#shinystate").val() == "Shiny"
+            dmg = getDmgForLevel(clickedDmg, reslvl, isShiny)
 
-            plainDamage = plainDamage * talentMulti // max stats (not done here)
+            dmg = dmg * bdm // max stats (not done here)
 
-            p1dmg = (plainDamage * clickedpass1dmg) - plainDamage
-            p2dmg = (plainDamage * clickedpass2dmg) - plainDamage
-            totalDamage = plainDamage + p1dmg + p2dmg
+            p1dmg = (dmg * cp1d) - dmg
+            p2dmg = (dmg * cp2d) - dmg
+            td = dmg + p1dmg + p2dmg
 
-            //totalDamage = totalDamage * 1.9 // maybe here
+            dws = td * attacksPerMin * bsm
 
-            $("#resultArea").html(convertToFormatted(totalDamage, "") + " vs All")
+            $("#tbdmg").html(ctf(td))
+            $("#tbdmgpm").html(ctf(dws))
 
-            p1bdmg = (plainDamage * clickedpass1dmgs) - plainDamage
-            p2bdmg = (plainDamage * clickedpass2dmgs) - plainDamage
-            totalbDamage = plainDamage + p1bdmg + p2bdmg
+            $("#resultArea").html(ctf(td) + " vs All. DMG/min " + ctf(dws))
 
+            p1bdmg = (dmg * cp1ds) - dmg
+            p2bdmg = (dmg * cp2ds) - dmg
+            tbd = dmg + p1bdmg + p2bdmg
 
-            $("#resultArea2").html(convertToFormatted(totalbDamage, "") + " vs Boss")
+            dwsb = tbd * attacksPerMin * bsm
 
+            $("#tbdmgs").html(ctf(tbd))
+            $("#tbdmgpmb").html(ctf(dwsb))
+
+            $("#resultArea2").html(ctf(tbd) + " vs Boss")
+
+            $("#tbuname").html(cf)
+            $("#tbpass1").html(cp1)
+            $("#tbpass2").html(cp2)
         }
 
 
         /////////////////////////// Fighter stuff /////////////////////
-        clickedFighter = ""
-        clickedDmg = ""
-        clickedDmgs = ""
+        cf = "Select Unit"
+        cis = "images/nopass.png"
+        clickedDmg = "0"
+        clickedDmgs = "0"
 
         $(".imgFighter").hover(function () {
             fighter = $(this).data("fighter")
@@ -652,52 +777,62 @@
         });
 
         $(".imgFighter").mouseleave(function () {
-            $("#spyfighter").html(clickedFighter)
+            $("#spyfighter").html(cf)
             $("#spyfdmg").html(clickedDmg)
             $("#spyfsdmg").html(clickedDmgs)
         });
 
         $(".imgFighter").click(function () {
-            turnOffAllFighterSelectHighlights($(this))
-            clickedFighter = $(this).data("fighter")
+            toafsh($(this))
+            cf = $(this).data("fighter")
+            cis = $(this).find(".fgtimg").attr("src")
             clickedDmg = $(this).data("dmg")
             clickedDmgs = $(this).data("dmgs")
+            $("#inpdmg").val(clickedDmg)
             $(this).find(".clh").toggle()
         });
 
         //////////////////// Passive stuff ////////////////////////////
 
-        clickedpass1 = "No Passive"
-        clickedpass1dmg = "1"
-        clickedpass1dmgs = "1"
+        cp1 = "No Passive"
+        cp1i = "images/nopass.png"
+        cp1d = "1"
+        cp1ds = "1"
+        cp1s = "1"
 
-        clickedpass2 = "No Passive"
-        clickedpass2dmg = "1"
-        clickedpass2dmgs = "1"
+        cp2 = "No Passive"
+        cp2i = "images/nopass.png"
+        cp2d = "1"
+        cp2ds = "1"
+        cp2s = "1"
 
         // passive 1
         $(".imgselpass1").hover(function () {
             p1name = $(this).data("passname")
             p1dmg = $(this).data("dmg")
             p1dmgs = $(this).data("dmgs")
-            $("#spypass1").html(p1name + " &amp; " + clickedpass2)
+            p1spd = $(this).data("spd")
+            $("#spypass1").html(p1name)
             $("#spypassdmg1").html(p1dmg + "x")
             $("#spypassdmgs1").html(p1dmgs + "x")
+            $("#spypassspd1").html(p1spd + "x")
         });
 
         $(".imgselpass1").mouseleave(function () {
-            $("#spypass1").html(clickedpass1 + " &amp; " + clickedpass2)
-            $("#spypassdmg1").html(clickedpass1dmg)
-            $("#spypassdmgs1").html(clickedpass1dmgs)
+            $("#spypass1").html(cp1)
+            $("#spypassdmg1").html(cp1d)
+            $("#spypassdmgs1").html(cp1ds)
+            $("#spypassdmgs1").html(cp1s)
         });
 
         $(".imgselpass1").click(function () {
-            turnOffAllPass1SelectHighlights($(this))
-            clickedpass1 = $(this).data("passname")
-            clickedpass1dmg = $(this).data("dmg")
-            clickedpass1dmgs = $(this).data("dmgs")
+            toap1h($(this))
+            cp1 = $(this).data("passname")
+            cp1i = $(this).find(".passimg").attr("src")
+            cp1d = $(this).data("dmg")
+            cp1ds = $(this).data("dmgs")
+            cp1s = $(this).data("spd")
             $(this).find(".clh").toggle()
-            //getDamageWithPassives()
         });
 
         // passive 2
@@ -705,56 +840,124 @@
             p2name = $(this).data("passname")
             p2dmg = $(this).data("dmg")
             p2dmgs = $(this).data("dmgs")
-            $("#spypass1").html(clickedpass1 + " &amp; " + p2name)
+            p2spd = $(this).data("spd")
+            $("#spypass2").html(p2name)
             $("#spypassdmg2").html(p2dmg + "x")
             $("#spypassdmgs2").html(p2dmgs + "x")
+            $("#spypassspd2").html(p2spd + "x")
         });
 
         $(".imgselpass2").mouseleave(function () {
-            $("#spypass1").html(clickedpass1 + " &amp; " + clickedpass2)
-            $("#spypassdmg2").html(clickedpass2dmg)
-            $("#spypassdmgs2").html(clickedpass2dmgs)
+            $("#spypass2").html(cp2)
+            $("#spypassdmg2").html(cp2d)
+            $("#spypassdmgs2").html(cp2ds)
         });
 
         $(".imgselpass2").click(function () {
-            turnOffAllPass2SelectHighlights($(this))
-            clickedpass2 = $(this).data("passname")
-            clickedpass2dmg = $(this).data("dmg")
-            clickedpass2dmgs = $(this).data("dmgs")
+            toap2h($(this))
+            cp2 = $(this).data("passname")
+            cp2i = $(this).find(".passimg").attr("src")
+            cp2d = $(this).data("dmg")
+            cp2ds = $(this).data("dmgs")
+            cp2s = $(this).data("spd")
             $(this).find(".clh").toggle()
-            //getDamageWithPassives()
+            //getDMG()
+        });
+
+
+        //////////////////// toggle select process /////////////////////
+        $(".toggleManual").click(function () {
+            $("#autoarea").toggle(false)
+            $("#manualarea").toggle(true)
+        });
+
+        $(".toggleAuto").click(function () {
+            $("#autoarea").toggle(true)
+            $("#manualarea").toggle(false)
+        });
+
+        ////////////////// toggle singlu multi unit results ///////////
+        $(".toggleSingle").click(function () {
+            $("#multiResults").toggle(false)
+            $("#singleResults").toggle(true)
+        });
+
+        $(".toggleMulti").click(function () {
+            $("#multiResults").toggle(true)
+            $("#singleResults").toggle(false)
         });
 
 
 
+        ///////////////// Team functions /////////////////////////////
+        $("#addToTeam").click(function () {
+            //create unitdets
+            nv = [
+                team['length'],
+                $("#tbuname").html(),
+                $("#tbpass1").html(),
+                $("#tbpass2").html(),
+                $("#tbdmg").html(),
+                $("#tbdmgs").html(),
+                $("#tbdmgpm").html(),
+                $("#tbdmgpmb").html(),
+                cis,
+                cp1i,
+                cp2i
+            ]
 
+            // store unit dets
+            team[team['length']] = nv
 
-        $(".trworld").click(function () {
-            ffs = $(this)
-            costtd = ffs.find("td.costtd").html()
-            costMaxtd = ffs.find("td.costMaxtd").html()
-            wname = ffs.find("td.worldName").html()
-            $("#info").html(wname)
-            populateCost(costtd, costMaxtd)
+            $("#teamResTable").html(makeTeamTable())
         });
 
+        function makeTeamTable() {
+            ts = "<table class='table'>"
+            ts += "<tr><th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Selected Unit'>Unit</span></th>"
+            ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Passive 1'>P1</span></th>"
+            ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Passive 2'>P2</span></th>"
+            ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Damage Per Hit'>DMG</span></th>"
+            ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Boss Damage Per Hit'>BDMG</span></th>"
+            ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Estimated Damage per Minute'>DPM</span></th>"
+            ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Estimated Boss Damage per Minute'>BDPM</span></th></tr>"
+            totdmg = totbdmg = totdpm = totbdpm = 0
+            team.forEach((el, i) => {
+                ts += "<tr><td class='ptr' data-id='" + i + "'> &#x2612; <img src='" + el[8] + "' width='40px' alt='" + el[1] + "'>" +
+                    "</td><td><img src='" + el[9] + "' width='40px' alt='" + el[2] + "'>" +
+                    "</td><td><img src='" + el[10] + "' width='40px' alt='" + el[3] + "'>" +
+                    "</td><td>" + el[4] +
+                    "</td><td>" + el[5] +
+                    "</td><td>" + el[6] +
+                    "</td><td>" + el[7] +
+                    "</td></tr>"
+                totdmg += qfv(el[4])
+                totbdmg += qfv(el[5])
+                totdpm += qfv(el[6])
+                totbdpm += qfv(el[7])
+            });
+            ts += "<tr><td colspan='3' align='right'><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Damage Total for all units'>Total</span></td><td>" +
+                "<span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Party damage'>" + ctf(totdmg) + "</span></td><td>" +
+                "<span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Party damage to bosses'>" + ctf(totbdmg) + "</span></td><td>" +
+                "<span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Party damage per minute'>" + ctf(totdpm) + "</span></td><td>" +
+                "<span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Party damage per minutes to bosses'>" + ctf(totbdpm) + "</span></td></tr>"
+            return ts
+        }
 
+        // has to be on delegate for dynamic gen html
+        $(document).on("click", ".ptr", function () {
+            rmedItem = team.splice($(this).data("id"), 1)
+            console.log("Removing item " + rmedItem)
+            $("#teamResTable").html(makeTeamTable())
+        });
 
-        $("#shinystate").change(function () {
-            //getDamageWithPassives()
-        })
-
-        // level buttons
-        $("#inplevel").change(function () {
-            //getDamageWithPassives()
-        })
-
+        ////////////////////// level buttons/////////////////////////
         $(".lvlbtnmin").click(function () {
             oldv = $("#inplevel").val()
             newv = parseInt(oldv) - 1
             newv = newv < 1 ? 1 : newv
             $("#inplevel").val(newv)
-            //getDamageWithPassives()
+            //getDMG()
         });
 
         $(".lvlbtnplus").click(function () {
@@ -762,168 +965,98 @@
             newv = parseInt(oldv) + 1
             newv = newv > 500 ? 500 : newv
             $("#inplevel").val(newv)
-            //getDamageWithPassives()
+            //getDMG()
         });
 
-        // talent buuttons
-
-        $("#inptalent").change(function () {
-            //getDamageWithPassives()
-        })
-
-        $(".talbtnmin").click(function () {
-            oldv = $("#inptalent").val()
+        ///////////////// DMG talent buttons////////////////////////
+        $(".dmgtalbtnmin").click(function () {
+            oldv = $("#inpdmgtalent").val()
             newv = parseInt(oldv) - 1
             newv = newv < 1 ? 1 : newv
-            $("#inptalent").val(newv)
-            tmpmod = ((newv - 5) * 6)
-            $("#talmod").html(tmpmod + "%")
-            talentMulti = 1 + tmpmod / 100
-            //getDamageWithPassives()
+            $("#inpdmgtalent").val(newv)
+            $("#dmgtalmod").html(dmgTalToPer(newv))
+            bdm = dmgTalToMod(newv)
+            //getDMG()
         });
 
-        $(".talbtnplus").click(function () {
-            oldv = $("#inptalent").val()
+        $(".dmgtalbtnplus").click(function () {
+            oldv = $("#inpdmgtalent").val()
             newv = parseInt(oldv) + 1
             newv = newv > 20 ? 20 : newv
-            $("#inptalent").val(newv)
-            tmpmod = ((newv - 5) * 6)
-            $("#talmod").html(tmpmod + "%")
-            talentMulti = 1 + tmpmod / 100
-            //getDamageWithPassives()
+            $("#inpdmgtalent").val(newv)
+            $("#dmgtalmod").html(dmgTalToPer(newv))
+            bdm = dmgTalToMod(newv)
+            //getDMG()
         });
 
 
+        //////////////// SPD talent buttons //////////////////////
+        $(".spdtalbtnmin").click(function () {
+            oldv = $("#inpspdtalent").val()
+            newv = parseInt(oldv) - 1
+            newv = newv < 1 ? 1 : newv
+            $("#inpspdtalent").val(newv)
+            $("#spdtalmod").html(dmgTalToPer(newv))
+            bsm = dmgTalToMod(newv)
+            //getDMG()
+        });
 
-        $(".stobtnmin").click(function () {
-            oldv = $("#stoCount").val()
+        $(".spdtalbtnplus").click(function () {
+            oldv = $("#inpspdtalent").val()
+            newv = parseInt(oldv) + 1
+            newv = newv > 20 ? 20 : newv
+            $("#inpspdtalent").val(newv)
+            $("#spdtalmod").html(dmgTalToPer(newv))
+            bsm = dmgTalToMod(newv)
+            //getDMG()
+        });
+        ////////// unit base damage input //////////////
+
+        $(".dmgbtnmin").click(function () {
+            oldv = $("#inpdmg").val()
             newv = parseInt(oldv) - 1
             newv = newv < 0 ? 0 : newv
-            $("#stoCount").val(newv)
+            clickedDmg = forceNumber(newv)
+            $("#inpdmg").val(newv)
         });
 
-        $(".stobtnplu").click(function () {
-            oldv = $("#stoCount").val()
+        $(".dmgbtnplus").click(function () {
+            oldv = $("#inpdmg").val()
             newv = parseInt(oldv) + 1
-            $("#stoCount").val(newv)
+            clickedDmg = forceNumber(newv)
+            $("#inpdmg").val(newv)
         });
 
-        $(".tlbtnmin").click(function () {
-            oldv = $("#tlcount").val()
-            newv = parseInt(oldv) - 1
-            newv = newv < 0 ? 0 : newv
-            $("#tlcount").val(newv)
+        $("#inpdmg").keyup(function () {
+            clickedDmg = forceNumber($("#inpdmg").val())
+            getDMG()
         });
 
-        $(".tlbtnplu").click(function () {
-            oldv = $("#tlcount").val()
-            newv = parseInt(oldv) + 1
-            $("#tlcount").val(newv)
+        // highlight controls /////////////////////////////////////
+        function toafsh(object) {
+            bb = object.closest(".fighterbar")
+            bb.find(".worldsel").toggle(false)
+        }
+
+        function toap1h(object) {
+            bb = object.closest(".pass1bar")
+            bb.find(".worldsel").toggle(false)
+        }
+
+        function toap2h(object) {
+            bb = object.closest(".pass2bar")
+            bb.find(".worldsel").toggle(false)
+        }
+
+        // dynamic tooltip fix
+        $('body').tooltip({
+            selector: '.dynotooltip'
         });
-
-        $(".badgeBut").click(function () {
-            switch ($(this).attr("info")) {
-                case "test1":
-                    if ($("#inputGroupSelect05").val() == "1") {
-                        $("#inputGroupSelect05").val("2")
-                    } else {
-                        $("#inputGroupSelect05").val("1")
-                    }
-
-                    break;
-                case "test2":
-
-                    if ($("#inputGroupSelect02").val() == "1") {
-                        $("#inputGroupSelect02").val("2")
-                    } else {
-                        $("#inputGroupSelect02").val("1")
-                    }
-
-                    break;
-                case "test3":
-                    if ($("#inputGroupSelect03").val() == "1") {
-                        $("#inputGroupSelect03").val("2")
-                    } else {
-                        $("#inputGroupSelect03").val("1")
-                    }
-                    break;
-                case "test4":
-                    if (maxOpenPass == 1) {
-                        maxOpenPass = 2
-                    } else {
-                        maxOpenPass = 1
-                    }
-                    break;
-                case "test5": break;
-                case "test6": break;
-                case "test7":
-                    turnOffAllTimeEventHighlights($(this))
-                    if (timeEventMod == 2) {
-                        timeEventMod = 1
-                        $(this).find(".clh").toggle()
-                    } else {
-                        timeEventMod = 2
-                    }
-                    break;
-                case "test8":
-                    turnOffAllTimeEventHighlights($(this))
-                    if (timeEventMod == 3) {
-                        timeEventMod = 1
-                        $(this).find(".clh").toggle()
-                    } else {
-                        timeEventMod = 3
-                    }
-                    break;
-                case "test9":
-                    turnOffAllTimeEventHighlights($(this))
-                    if (timeEventMod == 4) {
-                        timeEventMod = 1
-                        $(this).find(".clh").toggle()
-                    } else {
-                        timeEventMod = 4
-                    }
-                    break;
-                case "test10":
-                    turnOffAllTimeEventHighlights($(this))
-                    if (timeEventMod == 5) {
-                        timeEventMod = 1
-                        $(this).find(".clh").toggle()
-                    } else {
-                        timeEventMod = 5
-                    }
-                    break;
-            }
-
-
-
-            $(this).find(".clh").toggle()
-        });
-
-        function turnOffAllFighterSelectHighlights(object) {
-            badgebar = object.closest(".fighterbar")
-            badgebar.find(".worldsel").toggle(false)
-        }
-
-        function turnOffAllPass1SelectHighlights(object) {
-            badgebar = object.closest(".pass1bar")
-            badgebar.find(".worldsel").toggle(false)
-        }
-
-        function turnOffAllPass2SelectHighlights(object) {
-            badgebar = object.closest(".pass2bar")
-            badgebar.find(".worldsel").toggle(false)
-        }
-
-        function turnOffAllTimeEventHighlights(object) {
-            badgebar = object.closest(".badgebar")
-            badgebar.find(".timeMod").toggle(false)
-        }
 
         // initial tooltips
         $('document').ready(function () {
             $('[data-toggle=tooltip]').tooltip();
         });
-
 
     </script>
 </body>
