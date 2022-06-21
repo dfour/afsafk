@@ -3,64 +3,13 @@
 
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/afs.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/afsutils.js"></script>
 
-    <style>
-        .my-custom-scrollbar {
-            position: relative;
-            height: 600px;
-            overflow: auto;
-        }
-
-        .table-wrapper-scroll-y {
-            display: block;
-        }
-
-        .img-txt-container {
-            position: relative;
-            text-align: center;
-            color: white;
-            display: inline-block;
-        }
-
-        .img-txt-centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: bolder;
-            color: rgb(0, 0, 0);
-            text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 253, 253);
-        }
-
-        body {
-            color: #dff3ff;
-            background-color: #525252;
-        }
-
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #424242;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #dff3ff;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f4fbff;
-        }
-    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79653090-2"></script>
     <script>
@@ -88,10 +37,10 @@
                     <a class="nav-link" href="index.html">AFK Calc</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="indev.html">AFK indev</a>
+                    <a class="nav-link" href="afsdmg.html">Damage Calc</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="afsdmg.html">Damage Calc</a>
+                    <a class="nav-link" href="info.html">Information</a>
                 </li>
             </ul>
         </div>
@@ -124,6 +73,15 @@
                 <div style="height: 10px;">&nbsp;</div>
                 <div>
                     <div class="text-center worldbar">
+                        <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
+                            title="&yen;5.95E &star;10T" data-dv1="&#x2a;Sensitive Slayer"
+                            data-dv2="Dragon-King &amp; Daireb" data-yen="5.95E" data-token="10T"
+                            data-world="TBC 25/06">
+                            <img src="images/nextworld-icon.png" width="75px">
+                            <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
+                                src="images/greensorcle.png" width="75px">
+                        </div>
+
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
                             title="&yen;1.98E &star;4.81T" data-dv1="&#x2a;Sensitive Slayer"
                             data-dv2="Dragon-King &amp; Daireb" data-yen="1.98E" data-token="4.81T"
@@ -203,8 +161,8 @@
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;5T &star;3.75B" data-dv1="&#x2a;Flaming Hero" data-dv2="Red Bat &amp; Daireb"
-                            data-yen="5T" data-token="3.75B" data-world="Icy Wastes">
+                            title="&yen;80T &star;3.75B" data-dv1="&#x2a;Flaming Hero" data-dv2="Red Bat &amp; Daireb"
+                            data-yen="80T" data-token="3.75B" data-world="Icy Wastes">
                             <img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
@@ -985,7 +943,6 @@
         $('document').ready(function () {
             $('[data-toggle=tooltip]').tooltip();
         });
-
 
     </script>
 </body>

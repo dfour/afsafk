@@ -3,64 +3,13 @@
 
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/afs.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/afsutils.js"></script>
 
-    <style>
-        .my-custom-scrollbar {
-            position: relative;
-            height: 600px;
-            overflow: auto;
-        }
-
-        .table-wrapper-scroll-y {
-            display: block;
-        }
-
-        .img-txt-container {
-            position: relative;
-            text-align: center;
-            color: white;
-            display: inline-block;
-        }
-
-        .img-txt-centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: bolder;
-            color: rgb(0, 0, 0);
-            text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 253, 253);
-        }
-
-        body {
-            color: #dff3ff;
-            background-color: #525252;
-        }
-
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #424242;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #dff3ff;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f4fbff;
-        }
-    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79653090-2"></script>
     <script>
@@ -88,10 +37,10 @@
                     <a class="nav-link" href="index.html">AFK Calc</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  active" href="indev.html">AFK indev</a>
+                    <a class="nav-link" href="afsdmg.html">Damage Calc</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="afsdmg.html">Damage Calc</a>
+                    <a class="nav-link" href="info.html">Information</a>
                 </li>
             </ul>
         </div>
@@ -212,8 +161,8 @@
                                 src="images/greensorcle.png" width="75px">
                         </div>
                         <div class="img-txt-container imgsel" data-toggle="tooltip" data-placement="top"
-                            title="&yen;5T &star;3.75B" data-dv1="&#x2a;Flaming Hero" data-dv2="Red Bat &amp; Daireb"
-                            data-yen="5T" data-token="3.75B" data-world="Icy Wastes">
+                            title="&yen;80T &star;3.75B" data-dv1="&#x2a;Flaming Hero" data-dv2="Red Bat &amp; Daireb"
+                            data-yen="80T" data-token="3.75B" data-world="Icy Wastes">
                             <img src="https://tr.rbxcdn.com/64c45bf97f2e436ab53188ffbce207b8/150/150/Image/Png"
                                 width="75px">
                             <img class="clh worldsel" style="position:absolute;left: 0;top: 0; display: none;"
@@ -628,19 +577,6 @@
                 <span class="small">Version 1.6.5 - Updated 11.06.2022 - <a href="indev.html"> Dev Version</a></span>
             </div>
             <div class="col-12"><a href="https://github.com/dfour/afsafk">Source Code</a></div>
-            <div class="col-12">
-                <!-- Google add start /////////////////////////////////////////////////////////////////////-->
-                <script async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8369848598369296"
-                    crossorigin="anonymous"></script>
-                <!-- afscalc -->
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8369848598369296"
-                    data-ad-slot="4772092090" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <!-- Google add end ///////////////////////////////////////////////////////////////////////-->
-            </div>
             <div class="col-12">&there4; &nbsp; &sup;_&fnof;&deg;&micro;&and;</div>
         </div>
     </div>
@@ -654,30 +590,16 @@
         **/
         // Control and calculate results here
 
-        // hard vars
-        defaultOpenPerHour = 592.1   // how many opens an be done in an hour
-        defaultMaxOpensPerHour = 40 // how many max opens can be done in a hour
-        defaultSellRate = 0.25      // value returned for sell (avg)
+        // vars
         timeEventMod = 1            // stores modifier for time event
         timeLordsMod = 0            // for time lord multiplier
         maxOpenPass = 2             // max open pass (1 for normal, 2 for own)
-        modLetters = " KMBTQEZYXWVU"  // modifiers for currency
         wname = "Pick A world!"
         yen = "0"
         mtoken = "0"
         dv1 = ""
         dv2 = ""
         // useful functions
-
-        // get the cost of a single open
-        function getCostOfSingleOpen(cps, opens) {
-            return cps * opens;
-        }
-
-        // get the cost of a single max open
-        function getCostOfSingleMaxOpen(cps, invSpace) {
-            return cps * invSpace * 0.5;
-        }
 
         // get cost for 1 hour of opening
         function getCostOfHourOpens(cps, opens, gpass, fiftyk, fuseSell, vip) {
@@ -720,25 +642,13 @@
             return to
         }
 
-        // convert cost to 3 digit value and set modifier
-        function convertToFormatted(value, mod) {
-            cmodpos = modLetters.indexOf(mod.toUpperCase())
-            while (Math.ceil(Math.log10(value + 1)) > 3) {
-                cmodpos += 1 // move to next modifier
-                value = value * 0.001// divide val by 1000 to mve 3 places down
-            }
-
-            return parseFloat(value.toFixed(2)) + modLetters[cmodpos]
-            //return value.toPrecision(3) + modLetters[cmodpos];
-        }
-
         // update cost input fields
         function populateCost(stringVal, maxStringVal) {
             if (stringVal === undefined || maxStringVal === undefined) {
                 return;
             }
-            cost = costModConvert(stringVal)
-            maxcost = costModConvert(maxStringVal)
+            cost = cmc(stringVal)
+            maxcost = cmc(maxStringVal)
             $("#inpcost").val(cost[0])
             $("#inpmod").val(cost[1])
             $("#inpMaxcost").val(maxcost[0])
@@ -746,7 +656,7 @@
         }
 
         // get cost value modifier
-        function costModConvert(stringVal) {
+        function cmc(stringVal) {
             if (stringVal === undefined) {
                 return;
             }
@@ -770,9 +680,9 @@
             table += "<tr><th>Time</th><th>&yen;en</th><th>&star;Tokens</th><th>&#x272D;Opens</th></tr>"
             for (let index = 1; index <= 24; index++) {
                 table += "<tr><td>" + index + " hour" + (index > 1 ? "s" : "") + "</td><td>" +
-                    convertToFormatted(cost * index, mod) + "</td><td>" +
-                    convertToFormatted(maxCost * index, mmod) + "</td><td>" +
-                    convertToFormatted(tot * index, "") + "</td></tr>"
+                    ctf(cost * index, mod) + "</td><td>" +
+                    ctf(maxCost * index, mmod) + "</td><td>" +
+                    ctf(tot * index, "") + "</td></tr>"
             }
             table += "</tabl>"
             return table

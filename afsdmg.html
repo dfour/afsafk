@@ -3,88 +3,12 @@
 
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/afs.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/afsutils.js"></script>
-
-    <style>
-        img {
-            /** /
-            opacity: 0.03;
-            /* hide all images for testing */
-        }
-
-        .my-custom-scrollbar {
-            position: relative;
-            height: 600px;
-            overflow: auto;
-        }
-
-        .table-wrapper-scroll-y {
-            display: block;
-        }
-
-        .img-txt-container {
-            position: relative;
-            text-align: center;
-            color: white;
-            display: inline-block;
-        }
-
-        .img-txt-centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-weight: bolder;
-            color: rgb(0, 0, 0);
-            text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 253, 253);
-        }
-
-        body {
-            color: #dff3ff;
-            background-color: #525252;
-        }
-
-        .fgtimg {
-            width: 85px;
-        }
-
-        .fgtimghl {
-            width: 85px;
-        }
-
-        /* Passive image and highlights*/
-        .passimg {
-            width: 50px;
-        }
-
-        .passhl {
-            width: 50px;
-        }
-
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #424242;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #dff3ff;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f4fbff;
-        }
-    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79653090-2"></script>
     <script>
@@ -110,11 +34,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">AFK Calc</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="indev.html">AFK indev</a>
-                </li>
                 <li class="nav-item active">
                     <a class="nav-link " href="afsdmg.html">Damage Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="info.html">Information</a>
                 </li>
             </ul>
         </div>
@@ -231,7 +155,7 @@
                             </div>
                             <!-- vegito -->
                             <div class="img-txt-container imgFighter" data-toggle="tooltip" data-placement="top"
-                                title="1" data-dmg="200" data-dmgs="360" data-fighter="Vegtable -(need data)">
+                                title="200" data-dmg="200" data-dmgs="360" data-fighter="Vegtable -(need image)">
                                 <img class="fgtimg" src="images/vegan.png">
                                 <img class="clh worldsel fgtimghl"
                                     style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
@@ -384,226 +308,15 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="text-center pass1bar">
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="No Passive" data-dmg="1" data-dmgs="1" data-spd="1" data-passname="No Passive"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/nopass.png">
-                                <img class="clh worldsel passhl" style="position:absolute;left: 0;top: 0;"
-                                    src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Monster" data-dmg="2.8" data-dmgs="2.8" data-spd="1.25" data-passname="Monster"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/monster.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="God" data-dmg="2.25" data-dmgs="2.25" data-spd="1.25" data-passname="God"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/god.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Time Lord" data-dmg="1.5" data-dmgs="1.5" data-spd="3" data-passname="Time Lord"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/timelord.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Ace" data-dmg="2.8" data-dmgs="2.8" data-spd="1" data-passname="Ace"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/ace.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Blessing" data-dmg="1.75" data-dmgs="1.75" data-spd="1" data-passname="Blessing"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/bless.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Ghostly" data-dmg="1.5" data-dmgs="1.5" data-spd="1.5" data-passname="Ghostly"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/ghost.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Solid Gold" data-dmg="1.75" data-dmgs="1.75" data-spd="0.8"
-                                data-passname="Solid Gold" style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/solid.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Sorcerer 3" data-dmg="1.2" data-dmgs="1.2" data-spd="1"
-                                data-passname="Sorcerer 3" style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/hp3.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Giant" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Giant"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/giant.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tank" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Tank"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tank.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 3" data-dmg="1" data-dmgs="2" data-spd="1" data-passname="Tactical 3"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tac3.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tiny" data-dmg="1.2" data-dmgs="1.2" data-spd="1.5" data-passname="Tiny"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tiny.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 2" data-dmg="1" data-dmgs="1.5" data-spd="1" data-passname="Tactical 2"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tac2.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Strong 3" data-dmg="1.5" data-dmgs="1.5" data-spd="1" data-passname="Strong 3"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/strong3.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass1" data-toggle="tooltip" data-placement="top"
-                                title="Strong 2" data-dmg="1.25" data-dmgs="1.25" data-spd="1" data-passname="Strong 2"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/strong2.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            <div id="p1aa">
+                                <!--PAss 1 generated here-->
                             </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="text-center pass2bar">
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="No Passive" data-dmg="1" data-dmgs="1" data-spd="1" data-passname="No Passive"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/nopass.png">
-                                <img class="clh worldsel passhl" style="position:absolute;left: 0;top: 0;"
-                                    src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Monster" data-dmg="2.8" data-dmgs="2.8" data-spd="1.25" data-passname="Monster"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/monster.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="God" data-dmg="2.25" data-dmgs="2.25" data-spd="1.25" data-passname="God"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/god.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Time Lord" data-dmg="1.5" data-dmgs="1.5" data-spd="3" data-passname="Time Lord"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/timelord.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Ace" data-dmg="2.8" data-dmgs="2.8" data-spd="1" data-passname="Ace"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/ace.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Ghostly" data-dmg="1.5" data-dmgs="1.5" data-spd="1.5" data-passname="Ghostly"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/ghost.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Solid Gold" data-dmg="1.75" data-dmgs="1.75" data-spd="0.8"
-                                data-passname="Solid Gold" style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/solid.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Sorcerer 3" data-dmg="1.2" data-dmgs="1.2" data-spd="1"
-                                data-passname="Sorcerer 3" style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/hp3.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Giant" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Giant"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/giant.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tank" data-dmg="1.65" data-dmgs="1.65" data-spd="1" data-passname="Tank"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tank.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 3" data-dmg="1" data-dmgs="2" data-spd="1" data-passname="Tactical 3"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tac3.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tiny" data-dmg="1.2" data-dmgs="1.2" data-spd="1.5" data-passname="Tiny"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tiny.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Tactical 2" data-dmg="1" data-dmgs="1.5" data-spd="1" data-passname="Tactical 2"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/tac2.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Strong 3" data-dmg="1.5" data-dmgs="1.5" data-spd="1" data-passname="Strong 3"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/strong3.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
-                            </div>
-                            <div class="img-txt-container imgselpass2" data-toggle="tooltip" data-placement="top"
-                                title="Strong 2" data-dmg="1.25" data-dmgs="1.25" data-spd="1" data-passname="Strong 2"
-                                style="margin-bottom: 5px;">
-                                <img class="rounded passimg" src="images/strong2.png">
-                                <img class="clh worldsel passhl"
-                                    style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png">
+                            <div id="p2aa">
+                                <!--PAss 1 generated here-->
                             </div>
                         </div>
                     </div>
@@ -733,10 +446,7 @@
         bsm = 1     // Base Speed Multiplierdefault value of att spd talent
         team = []   // store th eteam info for full party dmg
 
-        // respond to Clicks anywhere in the body
-        $("body").click(function (e) {
-            getDMG()
-        });
+
 
         function getDMG() {
             reslvl = $("#inplevel").val()
@@ -806,6 +516,21 @@
 
         //////////////////// Passive stuff ////////////////////////////
 
+        function populatePassiveList(p1or2) {
+            rtstring = ""
+
+            for (const [key, value] of Object.entries(passiveData)) {
+                rtstring += '<div class="img-txt-container imgselpass' + p1or2 + '" data-toggle="tooltip" data-placement="top"'
+                rtstring += 'title="' + value.name + '" data-dmg="' + value.dmgMul + '" data-dmgs="' + value.dmgBMul + '" data-spd="' + value.attSpd + '" data-passname="' + value.name + '"'
+                rtstring += 'style="margin-bottom: 5px;">'
+                rtstring += '<img class="rounded passimg" src="' + value.image + '">'
+                rtstring += '<img class="clh worldsel passhl"'
+                rtstring += 'style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png"></div>'
+            }
+
+            return rtstring
+        }
+
         cp1 = "No Passive"
         cp1i = "images/nopass.png"
         cp1d = "1"
@@ -819,7 +544,7 @@
         cp2s = "1"
 
         // passive 1
-        $(".imgselpass1").hover(function () {
+        $(document).on("mouseenter", ".imgselpass1", function () {
             p1name = $(this).data("passname")
             p1dmg = $(this).data("dmg")
             p1dmgs = $(this).data("dmgs")
@@ -830,14 +555,14 @@
             $("#spypassspd1").html(p1spd + "x")
         });
 
-        $(".imgselpass1").mouseleave(function () {
+        $(document).on("mouseleave", ".imgselpass1", function () {
             $("#spypass1").html(cp1)
             $("#spypassdmg1").html(cp1d)
             $("#spypassdmgs1").html(cp1ds)
             $("#spypassspd1").html(cp1s)
         });
 
-        $(".imgselpass1").click(function () {
+        $(document).on("click", ".imgselpass1", function () {
             toap1h($(this))
             cp1 = $(this).data("passname")
             cp1i = $(this).find(".passimg").attr("src")
@@ -848,7 +573,7 @@
         });
 
         // passive 2
-        $(".imgselpass2").hover(function () {
+        $(document).on("mouseenter", ".imgselpass2", function () {
             p2name = $(this).data("passname")
             p2dmg = $(this).data("dmg")
             p2dmgs = $(this).data("dmgs")
@@ -859,14 +584,14 @@
             $("#spypassspd2").html(p2spd + "x")
         });
 
-        $(".imgselpass2").mouseleave(function () {
+        $(document).on("mouseleave", ".imgselpass2", function () {
             $("#spypass2").html(cp2)
             $("#spypassdmg2").html(cp2d)
             $("#spypassdmgs2").html(cp2ds)
             $("#spypassspd2").html(cp2s)
         });
 
-        $(".imgselpass2").click(function () {
+        $(document).on("click", ".imgselpass2", function () {
             toap2h($(this))
             cp2 = $(this).data("passname")
             cp2i = $(this).find(".passimg").attr("src")
@@ -926,6 +651,8 @@
         });
 
         function makeTeamTable() {
+            leadMul = 1
+
             ts = "<table class='table'>"
             ts += "<tr><th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Selected Unit'>Unit</span></th>"
             ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Passive 1'>P1</span></th>"
@@ -936,9 +663,24 @@
             ts += "<th><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Estimated Boss Damage per Minute'>BDPM</span></th></tr>"
             totdmg = totbdmg = totdpm = totbdpm = 0
             team.forEach((el, i) => {
-                ts += "<tr><td class='ptr' data-id='" + i + "'> &#x2612; <img src='" + el[8] + "' width='40px' alt='" + el[1] + "'>" +
-                    "</td><td><img src='" + el[9] + "' width='40px' alt='" + el[2] + "'>" +
-                    "</td><td><img src='" + el[10] + "' width='40px' alt='" + el[3] + "'>" +
+                if (el[9] == "images/leader3.png") {
+                    leadMul += 0.25
+                } else if (el[9] == "images/leader2.png") {
+                    leadMul += 0.12
+                } else if (el[9] == "images/leader1.png") {
+                    leadMul += 0.05
+                }
+                if (el[10] == "images/leader3.png") {
+                    leadMul += 0.25
+                } else if (el[10] == "images/leader2.png") {
+                    leadMul += 0.12
+                } else if (el[10] == "images/leader1.png") {
+                    leadMul += 0.05
+                }
+
+                ts += "<tr><td class='ptr' data-id='" + i + "'> &#x2612; <img class='rounded' src='" + el[8] + "' width='40px' alt='" + el[1] + "'>" +
+                    "</td><td><img class='rounded' src='" + el[9] + "' width='40px' alt='" + el[2] + "'>" +
+                    "</td><td><img class='rounded'src='" + el[10] + "' width='40px' alt='" + el[3] + "'>" +
                     "</td><td>" + el[4] +
                     "</td><td>" + el[5] +
                     "</td><td>" + el[6] +
@@ -949,6 +691,14 @@
                 totdpm += qfv(el[6])
                 totbdpm += qfv(el[7])
             });
+
+            // add leader damage
+            totdmg *= leadMul
+            totbdmg *= leadMul
+            totdpm *= leadMul
+            totbdpm *= leadMul
+
+
             ts += "<tr><td colspan='3' align='right'><span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Damage Total for all units'>Total</span></td><td>" +
                 "<span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Party damage'>" + ctf(totdmg) + "</span></td><td>" +
                 "<span class='dynotooltip' data-toggle='tooltip' data-placement='top' title='Party damage to bosses'>" + ctf(totbdmg) + "</span></td><td>" +
@@ -1060,6 +810,9 @@
             bb = object.closest(".pass2bar")
             bb.find(".worldsel").toggle(false)
         }
+        //////////////////////////////////////////////////
+        $("#p1aa").html(populatePassiveList(1))
+        $("#p2aa").html(populatePassiveList(2))
 
         // dynamic tooltip fix
         $('body').tooltip({
@@ -1069,6 +822,11 @@
         // initial tooltips
         $('document').ready(function () {
             $('[data-toggle=tooltip]').tooltip();
+        });
+
+        // respond to Clicks anywhere in the body (must be delegated by on or bugged values)
+        $(document).on("click", "body", function () {
+            getDMG()
         });
 
     </script>

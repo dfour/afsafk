@@ -1,0 +1,97 @@
+img {
+    /** /
+    opacity: 0.03;
+    /* hide all images for testing */
+}
+
+.fgtimg {
+    width: 85px;
+}
+
+.fgtimghl {
+    width: 85px;
+}
+
+/* Passive image and highlights*/
+.passimg {
+    width: 50px;
+}
+
+.passlge {
+    width: 75px;
+}
+
+.passimgsml {
+    width: 30px;
+}
+
+.passhl {
+    width: 50px;
+}
+.passhllge {
+    width: 75px;
+}
+.passhlsml {
+    width: 30px;
+}
+
+.imgselpass1{
+    margin-right:5px;
+}
+.imgselpass2{
+    margin-right:5px;
+}
+
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 600px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.img-txt-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    display: inline-block;
+}
+
+.img-txt-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(255, 255, 255), 1px 0 rgb(255, 255, 255), 0 -1px rgb(255, 253, 253);
+}
+
+body {
+    color: #dff3ff;
+    background-color: #525252;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #424242;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dff3ff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #f4fbff;
+}

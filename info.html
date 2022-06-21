@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/afs.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/afsutils.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79653090-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-79653090-2');
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">AFS Utils</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">AFK Calc</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="afsdmg.html">Damage Calc</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="info.html">Information</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-top: 25px;">
+        <div class="row justify-content-md-center">
+            <img src="images/afs-logo.png" width="300px"> <img src="images/acc-info-logo.png"
+                style=" width:100%; max-width: 926px;">
+            &nbsp;&nbsp;&nbsp;&nbsp; by
+            d_four
+        </div>
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-3 col-lg-3">
+                <!-- Input area-->
+                <div id="passiveArea">
+                    <div class="card" style="min-height:125px">
+                        <div class="card-body">
+                            <h5 class="card-title">Select Information</h5>
+                            <button class="btn btn-info btn-sm toggleManual">Passive Info</button>
+                            <button class="btn btn-info btn-sm toggleManual">Raid Info</button>
+                            <button class="btn btn-info btn-sm toggleManual">Defence Info</button>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div class="text-center pass1bar">
+                        <div id="p1aa">
+                            <!--PAss 1 generated here-->
+                        </div>
+                    </div>
+                </div>
+                <div id="raidArea" style="display: none">
+                    <div class="card" style="min-height:125px">
+                        <div class="card-body">
+                            <h5 class="card-title">Select Information</h5>
+                            <button class="btn btn-info btn-sm toggleManual">Passive Info</button>
+                            <button class="btn btn-info btn-sm toggleManual">Raid Info</button>
+                            <button class="btn btn-info btn-sm toggleManual">Defence Info</button>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div class="text-center pass1bar">
+                        <!--raid here-->
+                    </div>
+                </div>
+                <div id="defenceArea" style="display: none">
+                    <div class="card" style="min-height:125px">
+                        <div class="card-body">
+                            <h5 class="card-title">Select Information</h5>
+                            <button class="btn btn-info btn-sm toggleManual">Passive Info</button>
+                            <button class="btn btn-info btn-sm toggleManual">Raid Info</button>
+                            <button class="btn btn-info btn-sm toggleManual">Defence Info</button>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div class="text-center pass1bar">
+                        <!--defence here-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-9">
+                <!-- Result Area -->
+                <div id="passiveAreaRes">
+                    <div class="card" style="min-height:125px">
+                        <div class="card-body">
+                            <h5 class="card-title">Passive Information</h5>
+                            <div class="singlePassInfo"></div>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div id="singlePassRes">
+                        <!--pass res here-->
+                    </div>
+                </div>
+                <div id="raidAreaRes" style="display: none">
+                    <div class="card" style="min-height:125px">
+                        <div class="card-body">
+                            <h5 class="card-title">Raid Information</h5>
+                            <p>Below is the DPC requirements to complete a raid for each world</p>
+                            <p><small>DPC requirement is : ((world number - 1) ^ 1.105) * base DPC</small></p>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div id="raidInfoResult">
+                        <!-- raid res here-->
+                        <table class="table table-sm">
+                            <tr>
+                                <th>World Number</th>
+                                <th>World Name</th>
+                                <th>Normal Solo</th>
+                                <th>Normal Full</th>
+                                <th>Massive Solo</th>
+                                <th>Massive Full</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="defenceAreaRes" style="display: none">
+                    <div class="card" style="min-height:125px">
+                        <div class="card-body">
+                            <h5 class="card-title">Raid Information</h5>
+                        </div>
+                    </div>
+                    <div style="height: 10px;">&nbsp;</div>
+                    <div id="defenceInforResult">
+                        <!-- defence res here-->
+                        Coming Soon &trade;
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <!-- Bot Bar -->
+            Values shown are just estimates as damage shown in AFS is a rounded value.
+        </div>
+        <div class="row">
+            <span class="small">Version 0.1 (Beta) - Updated 15.06.2022 </span>
+        </div>
+        <div class="row">
+            <a href="https://github.com/dfour/afsafk">Source Code</a>
+        </div>
+        <div class="row">
+            <div class="col-1">&nbsp;</div>
+        </div>
+        <div class="row">
+            &there4; &nbsp; &sup;_&fnof;&deg;&micro;&and;
+        </div>
+    </div>
+
+    <script>
+
+
+
+        function toggleDisplay(strid) {
+            switch (strid) {
+                case "Passive Info":
+                    $("#passiveArea").toggle(true);
+                    $("#passiveAreaRes").toggle(true);
+                    $("#raidArea").toggle(false);
+                    $("#raidAreaRes").toggle(false);
+                    $("#defenceArea").toggle(false);
+                    $("#defenceAreaRes").toggle(false);
+
+                    break;
+                case "Raid Info":
+                    $("#passiveArea").toggle(false);
+                    $("#passiveAreaRes").toggle(false);
+                    $("#raidArea").toggle(true);
+                    $("#raidAreaRes").toggle(true);
+                    $("#defenceArea").toggle(false);
+                    $("#defenceAreaRes").toggle(false);
+                    break;
+                case "Defence Info":
+                    $("#passiveArea").toggle(false);
+                    $("#passiveAreaRes").toggle(false);
+                    $("#raidArea").toggle(false);
+                    $("#raidAreaRes").toggle(false);
+                    $("#defenceArea").toggle(true);
+                    $("#defenceAreaRes").toggle(true);
+                    break;
+            }
+        }
+
+        $('.toggleManual').click(function () {
+            toggleDisplay($(this).html())
+        });
+
+        function sortTable(strTableId, row, dir) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById(strTableId);
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[row];
+                    y = rows[i + 1].getElementsByTagName("TD")[row];
+                    if (dir == "asc") {
+                        if (parseFloat(x.innerHTML) > parseFloat(y.innerHTML)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (parseFloat(x.innerHTML) < parseFloat(y.innerHTML)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+        function populatePassTable() {
+            tbstr = "<table class=\"table table-sm\" id=\"ptable\"><tr><th></th><th>Name</th><th onclick =\"sortTable('ptable',2 ,'desc')\">Damage</th><th onclick =\"sortTable('ptable',3 ,'desc')\">Boss Damage</th><th onclick =\"sortTable('ptable',4 ,'desc')\">Attack Speed</th><th onclick =\"sortTable('ptable',5 ,'desc')\">Movement Speed</th><th onclick =\"sortTable('ptable',6 ,'asc')\">Ultimate Charge</th><th onclick =\"sortTable('ptable',7 ,'desc')\">Size</th><th onclick =\"sortTable('ptable',8 ,'desc')\">Yen</th><th onclick =\"sortTable('ptable',9 ,'desc')\">Drops</th><th onclick =\"sortTable('ptable',10,'desc')\">Luck</th><th onclick =\"sortTable('ptable',11,'desc')\">Time</th><th onclick =\"sortTable('ptable',12,'desc')\">Party Damage</th><th onclick =\"sortTable('ptable',13,'asc')\">Exp Required</th></tr>"
+
+            for (const [key, value] of Object.entries(passiveData)) {
+                if (value.name != "No Pass") {
+                    tbstr += '<tr><td><img class="rounded passimgsml" src="' + value.image + '"></td>'
+                    tbstr += '<td>' + value.name + '</td>'
+                    tbstr += '<td>' + value.dmgMul + 'x</td>'
+                    tbstr += '<td>' + value.dmgBMul + 'x</td>'
+                    tbstr += '<td>' + value.attSpd + 'x</td>'
+                    tbstr += '<td>' + value.movSpd + 'x</td>'
+                    tbstr += '<td>' + value.ultChg + '</td>'
+                    tbstr += '<td>' + value.usize + 'x</td>'
+                    tbstr += '<td>+' + value.yen + '</td>'
+                    tbstr += '<td>+' + value.drops + '</td>'
+                    tbstr += '<td>+' + value.luck + '</td>'
+                    tbstr += '<td>+' + value.time + '</td>'
+                    tbstr += '<td>+' + value.globalDmg + '</td>'
+                    tbstr += '<td>' + value.expReq + 'x</td></tr>'
+                }
+            }
+
+            tbstr += '</table>'
+
+            $("#singlePassRes").html(tbstr)
+        }
+
+        // passive 1
+
+        function populatePassiveList(p1or2) {
+            rtstring = ""
+
+            for (const [key, value] of Object.entries(passiveData)) {
+                if (value.name != "No Pass") {
+                    rtstring += '<div class="img-txt-container imgselpass' + p1or2 + '" data-toggle="tooltip" data-placement="top"'
+                    rtstring += 'title="' + value.name + '" data-dmg="' + value.dmgMul + '" data-dmgs="' + value.dmgBMul + '" data-spd="' + value.attSpd + '" data-passname="' + value.name + '"'
+                    rtstring += 'style="margin-bottom: 5px;">'
+                    rtstring += '<img class="rounded passimglge" src="' + value.image + '">'
+                    rtstring += '<img class="clh worldsel passhllge"'
+                    rtstring += 'style="position:absolute;left: 0;top: 0; display: none;" src="images/greensqur.png"></div>'
+                }
+            }
+
+            return rtstring
+        }
+
+        // populate raid table
+        function populateRaidTable() {
+            tableStr = '<table class="table table-sm"><tr><th>World Number</th><th>World Name</th><th>Normal Solo</th><th>Normal Full</th><th>Massive Solo</th><th>Massive Full</th></tr>'
+            for (const [key, value] of Object.entries(worldData)) {
+
+                tableStr += '<tr><td><img src="' + value.worldImage + '" width="30px"></td>'
+                tableStr += '<td>' + value.name + '</td>'
+                tableStr += '<td>' + ctf(Math.pow(1.105, parseInt(key) - 1) * qfv(raidBase.soloNorm)) + '</td>'
+                tableStr += '<td>' + ctf(Math.pow(1.105, parseInt(key) - 1) * qfv(raidBase.fullNorm)) + '</td>'
+                tableStr += '<td>' + ctf(Math.pow(1.105, parseInt(key) - 1) * qfv(raidBase.soloMass)) + '</td>'
+                tableStr += '<td>' + ctf(Math.pow(1.105, parseInt(key) - 1) * qfv(raidBase.fullMass)) + '</td></tr>'
+            }
+            tableStr += '</table>'
+            $("#raidInfoResult").html(tableStr)
+        }
+
+
+        $(document).on("mouseenter", ".imgselpass1", function () {
+            p1name = $(this).data("passname")
+            passinfo = getPassiveByName(p1name)
+
+            dataForTop = ""
+            for (const [key, value] of Object.entries(passinfo)) {
+                dataForTop += key + " = " + value + " | "
+            }
+            $(".singlePassInfo").html(dataForTop)
+
+            p1dmg = $(this).data("dmg")
+            p1dmgs = $(this).data("dmgs")
+            p1spd = $(this).data("atkspd")
+            p1size = $(this).data("size")
+            p1move = $(this).data("move")
+            p1yen = $(this).data("yen")
+            p1drop = $(this).data("drop")
+            p1luck = $(this).data("luck")
+            p1ult = $(this).data("ult")
+            //$("#spypass1").html(p1name)
+            //$("#spypassdmg1").html(p1dmg + "x")
+            //$("#spypassdmgs1").html(p1dmgs + "x")
+            //$("#spypassspd1").html(p1spd + "x")
+        });
+
+        $(document).on("mouseleave", ".imgselpass1", function () {
+            $(".singlePassInfo").html("")
+        });
+
+        $(document).on("click", ".imgselpass1", function () {
+            toap1h($(this))
+            cp1 = $(this).data("passname")
+            cp1i = $(this).find(".passimg").attr("src")
+            cp1d = $(this).data("dmg")
+            cp1ds = $(this).data("dmgs")
+            cp1s = $(this).data("spd")
+            $(this).find(".clh").toggle()
+        });
+
+
+        function toap1h(object) {
+            bb = object.closest(".pass1bar")
+            bb.find(".worldsel").toggle(false)
+        }
+
+        // dynamic tooltip fix
+        $('body').tooltip({
+            selector: '.dynotooltip'
+        });
+
+        // initial tooltips
+        $('document').ready(function () {
+            $('[data-toggle=tooltip]').tooltip();
+        });
+
+        $("#p1aa").html(populatePassiveList(1))
+
+        populatePassTable()
+
+        populateRaidTable()
+
+    </script>
+</body>
+
+</html>
