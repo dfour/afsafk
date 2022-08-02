@@ -245,7 +245,7 @@
         }
 
         function populatePassTable() {
-            tbstr = "<table class=\"table table-sm\" id=\"ptable\"><tr><th></th><th>Name</th><th onclick =\"sortTable('ptable',2 ,'desc')\">Damage</th><th onclick =\"sortTable('ptable',3 ,'desc')\">Boss Damage</th><th onclick =\"sortTable('ptable',4 ,'desc')\">Attack Speed</th><th onclick =\"sortTable('ptable',5 ,'desc')\">Movement Speed</th><th onclick =\"sortTable('ptable',6 ,'asc')\">Ultimate Charge</th><th onclick =\"sortTable('ptable',7 ,'desc')\">Size</th><th onclick =\"sortTable('ptable',8 ,'desc')\">Yen</th><th onclick =\"sortTable('ptable',9 ,'desc')\">Drops</th><th onclick =\"sortTable('ptable',10,'desc')\">Luck</th><th onclick =\"sortTable('ptable',11,'desc')\">Time</th><th onclick =\"sortTable('ptable',12,'desc')\">Party Damage</th><th onclick =\"sortTable('ptable',13,'asc')\">Exp Required</th></tr>"
+            tbstr = "<table class=\"table table-sm\" id=\"ptable\"><tr><th></th><th>Name</th><th onclick =\"sortTable('ptable',2 ,'desc')\">Damage</th><th onclick =\"sortTable('ptable',3 ,'desc')\">Boss Damage</th><th onclick =\"sortTable('ptable',4 ,'desc')\">Attack Speed</th><th onclick =\"sortTable('ptable',5 ,'desc')\">Movement Speed</th><th onclick =\"sortTable('ptable',6 ,'asc')\">Ultimate Charge</th><th onclick =\"sortTable('ptable',7 ,'desc')\">Size</th><th onclick =\"sortTable('ptable',8 ,'desc')\">Yen</th><th onclick =\"sortTable('ptable',9 ,'desc')\">Drops</th><th onclick =\"sortTable('ptable',10,'desc')\">Luck</th><th onclick =\"sortTable('ptable',11,'desc')\">Time</th><th onclick =\"sortTable('ptable',12,'desc')\">Party Damage</th><th onclick =\"sortTable('ptable',13,'asc')\">Exp Required</th><th>Level Cap</th></tr>"
 
             for (const [key, value] of Object.entries(passiveData)) {
                 if (value.name != "No Pass") {
@@ -257,12 +257,13 @@
                     tbstr += '<td>' + value.movSpd + 'x</td>'
                     tbstr += '<td>' + value.ultChg + '</td>'
                     tbstr += '<td>' + value.usize + 'x</td>'
-                    tbstr += '<td>+' + value.yen + '</td>'
-                    tbstr += '<td>+' + value.drops + '</td>'
+                    tbstr += '<td>' + value.yen + '</td>'
+                    tbstr += '<td>' + value.drops + '</td>'
                     tbstr += '<td>+' + value.luck + '</td>'
                     tbstr += '<td>+' + value.time + '</td>'
                     tbstr += '<td>+' + value.globalDmg + '</td>'
-                    tbstr += '<td>' + value.expReq + 'x</td></tr>'
+                    tbstr += '<td>' + value.expReq + 'x</td>'
+                    tbstr += '<td>' + value.lvllimit + '</td></tr>'
                 }
             }
 
